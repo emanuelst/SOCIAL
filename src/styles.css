@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+/* https://tympanus.net/codrops/2014/07/30/fullscreen-form-interface/ */
+/* https://tympanus.net/Development/FullscreenForm/ */
+/* https://github.com/codrops/FullscreenForm */
+body {
+    padding: 10px;
+    font-family: "Helvetica";
+}
+
+.calculator .form-group {
+    max-width: 450px;
+}
+.questionnaire .form-group {
+    max-width: 100%;
+}
+
+.infoHoverButton {
+    border: none;
+    background: none;
+}
+
+.form-group{
+    background-color: #eaeaea;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.form-group > label {
+    font-size: large;
+    font-weight: 600;
+}
+
+.btn.btn-primary.submit-button {
+    /* display: none; */
+}
+
+/* https://stackoverflow.com/questions/16242980/making-radio-buttons-look-like-buttons-instead */
+formly-field-radio label {
+    padding:5px;
+    background:#f5f3f3;
+    border:1px solid #CCC;
+    cursor:pointer;
+    float: left;
+    margin: 5px;
+}
+
+formly-field-radio label:hover {
+    background:darkred;
+    color:#fff;
+}
+
+/* hide radio */
+.custom-radio .custom-control-label::before {
+    display: none;
+}
+
+.custom-control.custom-radio {width: 50%;float: left;}
+
+/* clearfix  https://css-tricks.com/snippets/css/clear-fix/ */
+.form-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.custom-control-label {
+    width: 95%;
+    color: darkred;
+    border: 1px solid darkred;
+    border-radius: 12px;
+    text-align: center;
+}
+.custom-control.custom-radio {
+    padding: 0;
+}
+
+.form-control#languageControl {
+    width: 130px;
+}
+
+.custom-control input[type="radio"]:checked + label {
+    background:rgb(255, 172, 172)
+}
+
+label.custom-control-label::after {
+    display: none;
+}
+
+/* https://stackoverflow.com/a/1216130/841052 */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning */
+/* https://css-tricks.com/position-sticky-2/ */
+/* https://codepen.io/simevidas/pen/JbdJRZ */
+#resultCalc {
+    background-color: #eaeaea;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    /*
+    background-color: #eaeaea;
+    width:400px;
+
+    margin-left: 510px;
+    padding: 2px 0 0 12px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+
+    float:right;
+    */
+
+}
+
+.innerdiv {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    /*
+    background-color: #eaeaea;
+    width:400px;
+
+    margin-left: 510px;
+    padding: 2px 0 0 12px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+
+    float:right;
+    */
+
+}
+
+/* WYSIWYG mode */
+/*
+formly-field {
+    display: block !important;
+}
+*/

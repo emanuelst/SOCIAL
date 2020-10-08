@@ -1,0 +1,31 @@
+dag {
+bb="-0.5,-0.5,0.5,0.5"
+Erwachsene [input,pos="-0.158,-0.454"]
+Geldleistung [result,resultcalculation="Erwachsene*(385.29*.6)",pos="-0.175,0.170"]
+Haushaltseinkommen [input,pos="0.277,-0.376"]
+Heizung [input,pos="-0.198,-0.366"]
+Miete [input,pos="-0.394,-0.369"]
+Minderjaehrige [input,pos="0.021,-0.456"]
+PersBeh [input,pos="0.290,-0.456"]
+Sachleistung [result,resultcalculation="Erwachsene*(256.86*.4)",pos="0.043,0.172"]
+Strom [input,pos="0.005,-0.369"]
+Wohnaufwand [result,resultcalculation="Miete+Heizung+Strom",pos="-0.388,0.169"]
+ergKeineKinder [result,resultcalculation="richtsatz*3",pos="0.247,-0.099"]
+ergKinder [result,resultcalculation="richtsatz*2",pos="-0.117,-0.120"]
+kinder [decision,decisioncalculation="Minderjaehrige>0",pos="-0.056,-0.263"]
+kinder0 [decision,decisioncalculation="Minderjaehrige==0",pos="0.279,-0.252"]
+richtsatz [input,inputdefaultvalue="123",pos="-0.334,-0.454"]
+test [result,resultcalculation="ergKinder*100",pos="0.076,0.022"]
+Erwachsene -> Minderjaehrige
+Haushaltseinkommen -> kinder
+Haushaltseinkommen -> kinder0
+Heizung -> Strom
+Miete -> Heizung
+Minderjaehrige -> PersBeh
+PersBeh -> Miete
+Strom -> Haushaltseinkommen
+ergKeineKinder -> test
+ergKinder -> test
+kinder -> ergKinder
+kinder0 -> ergKeineKinder
+}

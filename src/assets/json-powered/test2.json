@@ -1,0 +1,42 @@
+[
+    {
+        "question": null,
+        "key": "v1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "v1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "v2",
+                    "value": "v2",
+                    "sort": ""
+                },
+                {
+                    "label": "v3",
+                    "value": "v3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "question": null,
+        "key": "v4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "v4",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    }
+]

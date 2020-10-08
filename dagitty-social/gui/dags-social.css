@@ -1,0 +1,96 @@
+html {
+    background-color: #f5f5f5;
+}
+
+svg {
+    background-color: white;
+}
+
+#menu {
+    background: #e6e6e6;
+}
+
+h3 {
+    background: #e6e6e6;
+}
+
+#causal_effect_header, #causal_effect_select {
+    display: none;
+}
+
+#summary_header {
+    display: none;
+}
+
+#testable_implications_header {
+    display: none;
+}
+
+#viewmode_header {
+    display: none;
+}
+
+#effects_header {
+    display: none;
+}
+
+#dagstyle_header {
+    display: none;
+}
+
+#coloring_header {
+    display: none;
+}
+
+#legend img {
+    width: 32px;
+    height: 32px;
+}
+
+#legend p {
+    line-height: 32px;
+    display: flex;
+}
+
+#legend p span {
+    padding-left: 8px;
+}
+
+ul#menu > li:nth-child(2){
+   display:none;
+}
+
+div#variable input, div#php_test input[type="text"] {
+    border: 1px solid #424242;
+}
+
+div#variable textarea {
+    border: 1px solid #424242;
+}
+
+/* https://stackoverflow.com/questions/9686538/align-labels-in-form-next-to-input */
+/* https://stackoverflow.com/questions/31048293/css-form-inputtype-text-selector */
+div#variable input[type="text"], input[type="number"], div#php_test input[type="text"]{
+    height: 20px;
+    width: 100px;
+}
+div#variable .textboxlabel, div#php_test .textboxlabel{
+    margin-top:10px;
+    margin-bottom:10px;
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+#variable_question_label,
+#variable .textboxlabel#variable_question_label_label,
+#variable_input_label,
+#variable .textboxlabel#variable_input_label_label,
+#variable_input_sort,
+#variable .textboxlabel#variable_input_sort_label,
+#variable_answer_label,
+#variable .textboxlabel#variable_answer_label_label,
+#variable_result_label,
+#variable .textboxlabel#variable_result_label_label {
+    display: none;
+}

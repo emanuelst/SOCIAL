@@ -1,0 +1,1596 @@
+[
+    {
+        "myFormType": "calculator"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.18\"",
+        "key": "zuschlagbeh",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagbeh",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.7\"",
+        "key": "richtsatzhaushalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "richtsatzhaushalt",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.45\"",
+        "key": "richtsatzdritte",
+        "type": "radio",
+        "templateOptions": {
+            "label": "richtsatzdritte",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "input": null,
+        "defaultValue": "917.35",
+        "key": "richtsatz",
+        "type": "input",
+        "templateOptions": {
+            "disabled": "true",
+            "label": "richtsatz",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "question": null,
+        "questionlabel": "\"Erwachsene im Haushalt\"",
+        "key": "Erwachsene",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Erwachsene",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "1 Erwachsener",
+                    "value": "1",
+                    "sort": ""
+                },
+                {
+                    "label": "2 Erwachsene",
+                    "value": "2",
+                    "sort": ""
+                },
+                {
+                    "label": "3 Erwachsene",
+                    "value": "3",
+                    "sort": ""
+                },
+                {
+                    "label": "4 Erwachsene",
+                    "value": "4",
+                    "sort": ""
+                },
+                {
+                    "label": "5 Erwachsene",
+                    "value": "5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Erwachsene || model.Erwachsene < 5\"",
+        "key": "decision5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "decision5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenPers5",
+                    "value": "EinkommenPers5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Erwachsene || model.Erwachsene < 4\"",
+        "key": "decision4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "decision4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenPers4",
+                    "value": "EinkommenPers4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Erwachsene || model.Erwachsene < 3\"",
+        "key": "decision3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "decision3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenPers3",
+                    "value": "EinkommenPers3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Erwachsene || model.Erwachsene < 2\"",
+        "key": "decision2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "decision2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenPers2",
+                    "value": "EinkommenPers2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Erwachsene || model.Erwachsene < 1\"",
+        "key": "decision1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "decision1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenPers1",
+                    "value": "EinkommenPers1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "input": null,
+        "inputsort": "\"1\"",
+        "key": "EinkommenPers1",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenPers1",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenPers2",
+                    "value": "EinkommenPers2",
+                    "sort": ""
+                },
+                {
+                    "label": "Minderjaehrige",
+                    "value": "Minderjaehrige",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Erwachsene || model.Erwachsene < 1"
+    },
+    {
+        "input": null,
+        "inputsort": "\"2\"",
+        "key": "EinkommenPers2",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenPers2",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenPers3",
+                    "value": "EinkommenPers3",
+                    "sort": ""
+                },
+                {
+                    "label": "Minderjaehrige",
+                    "value": "Minderjaehrige",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Erwachsene || model.Erwachsene < 2"
+    },
+    {
+        "input": null,
+        "inputsort": "\"3\"",
+        "key": "EinkommenPers3",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenPers3",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenPers4",
+                    "value": "EinkommenPers4",
+                    "sort": ""
+                },
+                {
+                    "label": "Minderjaehrige",
+                    "value": "Minderjaehrige",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Erwachsene || model.Erwachsene < 3"
+    },
+    {
+        "input": null,
+        "inputsort": "\"4\"",
+        "key": "EinkommenPers4",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenPers4",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenPers5",
+                    "value": "EinkommenPers5",
+                    "sort": ""
+                },
+                {
+                    "label": "Minderjaehrige",
+                    "value": "Minderjaehrige",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Erwachsene || model.Erwachsene < 4"
+    },
+    {
+        "input": null,
+        "inputsort": "\"5\"",
+        "key": "EinkommenPers5",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenPers5",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "Minderjaehrige",
+                    "value": "Minderjaehrige",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Erwachsene || model.Erwachsene < 5"
+    },
+    {
+        "question": null,
+        "questionlabel": "\"TestTest\"",
+        "key": "Minderjaehrige",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Minderjaehrige",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "0 Kinder",
+                    "value": "0",
+                    "sort": ""
+                },
+                {
+                    "label": "1 Kind",
+                    "value": "1",
+                    "sort": ""
+                },
+                {
+                    "label": "2 Kinder",
+                    "value": "2",
+                    "sort": ""
+                },
+                {
+                    "label": "3 Kinder",
+                    "value": "3",
+                    "sort": ""
+                },
+                {
+                    "label": "4 Kinder",
+                    "value": "4",
+                    "sort": ""
+                },
+                {
+                    "label": "5 Kinder",
+                    "value": "5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Minderjaehrige || model.Minderjaehrige < 5\"",
+        "key": "kinddecision5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinddecision5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenKind5",
+                    "value": "EinkommenKind5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Minderjaehrige || model.Minderjaehrige < 4\"",
+        "key": "kinddecision4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinddecision4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenKind4",
+                    "value": "EinkommenKind4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Minderjaehrige || model.Minderjaehrige < 3\"",
+        "key": "kinddecision3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinddecision3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenKind3",
+                    "value": "EinkommenKind3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Minderjaehrige || model.Minderjaehrige < 2\"",
+        "key": "kinddecision2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinddecision2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenKind2",
+                    "value": "EinkommenKind2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"!model.Minderjaehrige || model.Minderjaehrige < 1\"",
+        "key": "kinddecision1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinddecision1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommenKind1",
+                    "value": "EinkommenKind1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "input": null,
+        "key": "EinkommenKind1",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenKind1",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenKind2",
+                    "value": "EinkommenKind2",
+                    "sort": ""
+                },
+                {
+                    "label": "PersBeh",
+                    "value": "PersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Minderjaehrige || model.Minderjaehrige < 1"
+    },
+    {
+        "input": null,
+        "key": "EinkommenKind2",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenKind2",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenKind3",
+                    "value": "EinkommenKind3",
+                    "sort": ""
+                },
+                {
+                    "label": "PersBeh",
+                    "value": "PersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Minderjaehrige || model.Minderjaehrige < 2"
+    },
+    {
+        "input": null,
+        "key": "EinkommenKind3",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenKind3",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenKind4",
+                    "value": "EinkommenKind4",
+                    "sort": ""
+                },
+                {
+                    "label": "PersBeh",
+                    "value": "PersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Minderjaehrige || model.Minderjaehrige < 3"
+    },
+    {
+        "input": null,
+        "key": "EinkommenKind4",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenKind4",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "EinkommenKind5",
+                    "value": "EinkommenKind5",
+                    "sort": ""
+                },
+                {
+                    "label": "PersBeh",
+                    "value": "PersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Minderjaehrige || model.Minderjaehrige < 4"
+    },
+    {
+        "input": null,
+        "key": "EinkommenKind5",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "EinkommenKind5",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "PersBeh",
+                    "value": "PersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Minderjaehrige || model.Minderjaehrige < 5"
+    },
+    {
+        "question": null,
+        "key": "PersBeh",
+        "type": "radio",
+        "templateOptions": {
+            "label": "PersBeh",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "0 Personen",
+                    "value": "0",
+                    "sort": "\"0\""
+                },
+                {
+                    "label": "1 Person",
+                    "value": "1",
+                    "sort": "\"1\""
+                },
+                {
+                    "label": "2 Personen",
+                    "value": "2",
+                    "sort": "\"2\""
+                },
+                {
+                    "label": "3 Personen",
+                    "value": "3",
+                    "sort": "\"3\""
+                },
+                {
+                    "label": "4 Personen",
+                    "value": "4",
+                    "sort": "\"4\""
+                },
+                {
+                    "label": "5 Personen",
+                    "value": "5",
+                    "sort": "\"5\""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "input": null,
+        "key": "Wohnzuschuss",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "Wohnzuschuss",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "Miete",
+                    "value": "Miete",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "input": null,
+        "key": "Miete",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "Miete",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "Heizung",
+                    "value": "Heizung",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "input": null,
+        "key": "Heizung",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "Heizung",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "Strom",
+                    "value": "Strom",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "input": null,
+        "key": "Strom",
+        "type": "input",
+        "templateOptions": {
+            "type": "number",
+            "min": 0,
+            "label": "Strom",
+            "translate": "true",
+            "placeholder": 0,
+            "addonLeft": {
+                "class": "fa fa-euro"
+            },
+            "options": [
+                {
+                    "label": "alleinlebensunterhalt",
+                    "value": "alleinlebensunterhalt",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ]
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.6\"",
+        "key": "alleinlebensunterhalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "alleinlebensunterhalt",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "alleinwohnbedarf",
+                    "value": "alleinwohnbedarf",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.4\"",
+        "key": "alleinwohnbedarf",
+        "type": "radio",
+        "templateOptions": {
+            "label": "alleinwohnbedarf",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "haushaltlebensunterhalt",
+                    "value": "haushaltlebensunterhalt",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatzhaushalt*.6\"",
+        "key": "haushaltlebensunterhalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "haushaltlebensunterhalt",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "haushaltwohnbedarf",
+                    "value": "haushaltwohnbedarf",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatzhaushalt*.4\"",
+        "key": "haushaltwohnbedarf",
+        "type": "radio",
+        "templateOptions": {
+            "label": "haushaltwohnbedarf",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "drittelebensunterhalt",
+                    "value": "drittelebensunterhalt",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatzdritte*.6\"",
+        "key": "drittelebensunterhalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "drittelebensunterhalt",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "drittewohnbedarf",
+                    "value": "drittewohnbedarf",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatzdritte*.4\"",
+        "key": "drittewohnbedarf",
+        "type": "radio",
+        "templateOptions": {
+            "label": "drittewohnbedarf",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinder1",
+                    "value": "kinder1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.25\"",
+        "key": "kinder1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinder1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinder2",
+                    "value": "kinder2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.20\"",
+        "key": "kinder2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinder2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinder3",
+                    "value": "kinder3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.15\"",
+        "key": "kinder3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinder3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinder4",
+                    "value": "kinder4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.125\"",
+        "key": "kinder4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinder4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinder5",
+                    "value": "kinder5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.12\"",
+        "key": "kinder5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinder5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "zuschlagalleink1",
+                    "value": "zuschlagalleink1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.12\"",
+        "key": "zuschlagalleink1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagalleink1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "zuschlagalleink2",
+                    "value": "zuschlagalleink2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.09\"",
+        "key": "zuschlagalleink2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagalleink2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "zuschlagalleink3",
+                    "value": "zuschlagalleink3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.06\"",
+        "key": "zuschlagalleink3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagalleink3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "zuschlagalleink4",
+                    "value": "zuschlagalleink4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"richtsatz*.03\"",
+        "key": "zuschlagalleink4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagalleink4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "zuschlagPersBeh",
+                    "value": "zuschlagPersBeh",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"PersBeh*zuschlagbeh\"",
+        "key": "zuschlagPersBeh",
+        "type": "radio",
+        "templateOptions": {
+            "label": "zuschlagPersBeh",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldAllein",
+                    "value": "GeldAllein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatz-EinkommenPers1)*.6\"",
+        "key": "GeldAllein",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldAllein",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldPers1",
+                    "value": "GeldPers1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzhaushalt-EinkommenPers1)*.6\"",
+        "key": "GeldPers1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldPers1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldPers2",
+                    "value": "GeldPers2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzhaushalt-EinkommenPers2)*.6\"",
+        "key": "GeldPers2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldPers2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldPers3",
+                    "value": "GeldPers3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers3)*.6\"",
+        "key": "GeldPers3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldPers3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldPers4",
+                    "value": "GeldPers4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers4)*.6\"",
+        "key": "GeldPers4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldPers4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "GeldPers5",
+                    "value": "GeldPers5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers5)*.6\"",
+        "key": "GeldPers5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "GeldPers5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachAllein",
+                    "value": "SachAllein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatz-EinkommenPers1)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachAllein",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachAllein",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachPers1",
+                    "value": "SachPers1",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzhaushalt-EinkommenPers1)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachPers1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachPers1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachPers2",
+                    "value": "SachPers2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzhaushalt-EinkommenPers2)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachPers2",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachPers2",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachPers3",
+                    "value": "SachPers3",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers3)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachPers3",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachPers3",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachPers4",
+                    "value": "SachPers4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers4)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachPers4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachPers4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "SachPers5",
+                    "value": "SachPers5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"(richtsatzdritte-EinkommenPers5)*.4-(Wohnzuschuss/Erwachsene)\"",
+        "key": "SachPers5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "SachPers5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Wohnaufwand",
+                    "value": "Wohnaufwand",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"Miete+Heizung+Strom\"",
+        "key": "Wohnaufwand",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Wohnaufwand",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Geldleistung",
+                    "value": "Geldleistung",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"GeldPers1*1\"",
+        "key": "Geldleistung",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Geldleistung",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Sachleistung",
+                    "value": "Sachleistung",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"SachPers1*1\"",
+        "key": "Sachleistung",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Sachleistung",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Gesamtleistung",
+                    "value": "Gesamtleistung",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"Geldleistung+Sachleistung\"",
+        "key": "Gesamtleistung",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Gesamtleistung",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "true"
+    }
+]

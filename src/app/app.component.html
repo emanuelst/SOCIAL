@@ -1,0 +1,269 @@
+<!-- https://stackoverflow.com/questions/35055088/get-current-value-when-change-select-option-angular2/44237376 -->
+<!-- https://medium.com/@kastepanyan24/how-to-set-selected-option-dynamically-in-angular-6-85c99958cca5 -->
+<!-- https://stackoverflow.com/questions/32080768/angular-translate-html-tags -->
+
+<h1>SOCIAL</h1>
+<span [innerHTML]="'Eine Rechen-App für das Sozialhilfegesetz' | translate"></span>
+
+<br />
+<br />
+
+<form [formGroup]="languageForm" (change)="changeLanguage($event.target.value)">
+ <select id="languageControl" class="form-control" formControlName="languageControl">
+  <option [value]="language.code" *ngFor="let language of languages">{{language.name}}</option>
+ </select>
+</form>
+
+<br />
+<br />
+
+<!-- use this to check if we're in questionnaire or in calculator mode -->
+<!-- myFormType can be either 'calculator' or 'questionnaire' -->
+<!-- {{getFormType() | json}} -->
+
+<div class="container" style="position:relative;">
+ <div class="row">
+
+  <!-- https://stackoverflow.com/questions/58970117/how-to-make-left-and-right-grid-sticky-and-middle-one-scrollable-in-bootstrap-4 -->
+  <!-- https://stackoverflow.com/questions/35269179/angular-conditional-class-with-ngclass -->
+  <!-- conditionally apply class (12 column & questionnaire for questionnaire; 6 column & calculator for calculator) -->
+  <div [ngClass]="(getFormType() == 'questionnaire')?'questionnaire col-lg-12':'calculator col-lg-6'">
+   <!-- all contents in left & middle scrollable -->
+   <form [formGroup]="form" (ngSubmit)="submit()">
+    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    <!-- disable for prototyping -->
+    <!-- <button type="submit" class="btn btn-primary submit-button">Submit & Calc</button> -->
+   </form>
+  </div>
+
+  <!-- only display calculation results when we're in calculator mode -->
+  <!-- getFormType returns undefined if not known; otherwise calculator or questionnaire -->
+  <div *ngIf="getFormType() == 'calculator'" class="col-lg-6">
+   <!-- https://angular.io/api/common/NgIf -->
+   <!-- https://dzone.com/articles/why-we-shound-not-use-function-inside-angular-temp -->
+
+   <ng-template #tipContent2>({{"capChild" | translate}})</ng-template>
+
+
+   <!-- hover is related to ng-bootstrap issue 3630 https://github.com/ng-bootstrap/ng-bootstrap/issues/3630 -->
+   <!-- template for kids (nicht alleinerziehend) -->
+   <ng-template #tplKinder let-kinder>
+    <div *ngIf="model.Minderjaehrige == '0'">0 {{"Kinder" | translate}} <br /></div>
+    <div *ngIf="model.Minderjaehrige == '1'">1 {{"Kind" | translate}}: <br />{{resultCalculationDictionary["kinder1"].toFixed(2)}}€ - {{model["EinkommenKind1"] ?  model["EinkommenKind1"].toFixed(2) : 0}}€ = {{totalKinder.toFixed(2)}}€ <button class="infoHoverButton" [ngbTooltip]="tipContent2" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></div>
+    <div *ngIf="model.Minderjaehrige == '2'">2 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["kinder2"].toFixed(2)}}€ - {{model["EinkommenKind1"] ? model["EinkommenKind1"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder2"].toFixed(2)}}€ - {{model["EinkommenKind2"] ? model["EinkommenKind2"].toFixed(2) : 0}}€ = {{totalKinder.toFixed(2)}}€<button class="infoHoverButton" [ngbTooltip]="tipContent2" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></div>
+    <div *ngIf="model.Minderjaehrige == '3'">3 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["kinder3"].toFixed(2)}}€ - {{model["EinkommenKind1"] ? model["EinkommenKind1"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder3"].toFixed(2)}}€ - {{model["EinkommenKind2"] ? model["EinkommenKind2"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder3"].toFixed(2)}}€ - {{model["EinkommenKind3"] ? model["EinkommenKind3"].toFixed(2) : 0}}€ = {{totalKinder.toFixed(2)}}€ <button class="infoHoverButton" [ngbTooltip]="tipContent2" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></div>
+    <div *ngIf="model.Minderjaehrige == '4'">4 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["kinder4"].toFixed(2)}}€ - {{model["EinkommenKind1"] ? model["EinkommenKind1"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder4"].toFixed(2)}}€ - {{model["EinkommenKind2"] ? model["EinkommenKind2"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder4"].toFixed(2)}}€ - {{model["EinkommenKind3"] ? model["EinkommenKind3"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder4"].toFixed(2)}}€ - {{model["EinkommenKind4"] ? model["EinkommenKind4"].toFixed(2) : 0}}€ = {{totalKinder.toFixed(2)}}€ <button class="infoHoverButton" [ngbTooltip]="tipContent2" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></div>
+    <div *ngIf="model.Minderjaehrige == '5'">5 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["kinder5"].toFixed(2)}}€ - {{model["EinkommenKind1"] ? model["EinkommenKind1"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder5"].toFixed(2)}}€ - {{model["EinkommenKind2"] ? model["EinkommenKind2"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder5"].toFixed(2)}}€ - {{model["EinkommenKind3"] ? model["EinkommenKind3"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder5"].toFixed(2)}}€ - {{model["EinkommenKind4"] ? model["EinkommenKind4"].toFixed(2) : 0}}€ + {{resultCalculationDictionary["kinder5"].toFixed(2)}}€ - {{model["EinkommenKind5"] ? model["EinkommenKind5"].toFixed(2) : 0}}€ = {{totalKinder.toFixed(2)}}€ <button class="infoHoverButton" [ngbTooltip]="tipContent2" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></div>
+
+
+   </ng-template>
+   <!-- template end -->
+
+   <!-- some angular 2-way-binding
+    // want sticky on fixed right position
+    // https://stackoverflow.com/questions/31490713/iterate-over-object-in-angular
+   -->
+
+   <ng-template #tipContentNegative>({{"benefitsNegative" | translate}})</ng-template>
+
+   <div id="resultCalc" class="sticky-top">
+    <b>{{"Berechnung" | translate}}</b><br /><br />
+
+
+    <div *ngIf="!model.Erwachsene">{{"adultsHint" | translate}}<br /><br /></div>
+
+    <div *ngIf="model.Erwachsene == '1'">
+     Person 1 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldAllein"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldAllein"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 1 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachAllein"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachAllein"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     <ng-template *ngTemplateOutlet="tplKinder; context: {$implicit: resultCalculationDictionary}"></ng-template>
+
+     <br />
+
+
+     <div *ngIf="model.Minderjaehrige == '0'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 0 {{"Kinder" | translate}} <br /></div>
+     <div *ngIf="model.Minderjaehrige == '1'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 1 {{"Kind" | translate}}: <br />{{resultCalculationDictionary["zuschlagalleink1"].toFixed(2)}}€</div>
+     <div *ngIf="model.Minderjaehrige == '2'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 2 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["zuschlagalleink1"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink2"].toFixed(2)}}€ = {{totalKinderAllein.toFixed(2)}}€</div>
+     <div *ngIf="model.Minderjaehrige == '3'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 3 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["zuschlagalleink1"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink2"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink3"].toFixed(2)}}€ = {{totalKinderAllein.toFixed(2)}}€</div>
+     <div *ngIf="model.Minderjaehrige == '4'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 4 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["zuschlagalleink1"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink2"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink3"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink4"].toFixed(2)}}€ = {{totalKinderAllein.toFixed(2)}}€</div>
+     <div *ngIf="model.Minderjaehrige == '5'">{{"ZuschlagAlleinerziehend" | translate}}: <br /> 5 {{"Kinder" | translate}}: <br />{{resultCalculationDictionary["zuschlagalleink1"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink2"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink3"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink4"].toFixed(2)}}€ + {{resultCalculationDictionary["zuschlagalleink4"].toFixed(2)}}€ = {{totalKinderAllein.toFixed(2)}}€</div>
+
+    </div>
+
+    <div *ngIf="model.Erwachsene == '2'">
+     Person 1 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 1 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 2 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 2 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     <ng-template *ngTemplateOutlet="tplKinder; context: {$implicit: resultCalculationDictionary}"></ng-template>
+
+    </div>
+
+    <div *ngIf="model.Erwachsene == '3'">
+     Person 1 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 1 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 2 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 2 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 3 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 3 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     <ng-template *ngTemplateOutlet="tplKinder; context: {$implicit: resultCalculationDictionary}"></ng-template>
+
+    </div>
+
+    <div *ngIf="model.Erwachsene == '4'">
+     Person 1 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 1 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 2 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 2 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 3 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 3 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 4 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers4"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers4"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 4 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers4"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers4"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     <ng-template *ngTemplateOutlet="tplKinder; context: {$implicit: resultCalculationDictionary}"></ng-template>
+
+    </div>
+
+    <div *ngIf="model.Erwachsene == '5'">
+     Person 1 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 1 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers1"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers1"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 2 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 2 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers2"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers2"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 3 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 3 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers3"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers3"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 4 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers4"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers4"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 4 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers4"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers4"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     Person 5 {{"Lebensunterhalt" | translate}}: {{resultCalculationDictionary["GeldPers5"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["GeldPers5"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     Person 5 {{"Wohnbedarf" | translate}}: {{resultCalculationDictionary["SachPers5"].toFixed(2)}}€ <span *ngIf='resultCalculationDictionary["SachPers5"] < 0'><button class="infoHoverButton" [ngbTooltip]="tipContentNegative" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button></span>  <br />
+     <br />
+
+     <ng-template *ngTemplateOutlet="tplKinder; context: {$implicit: resultCalculationDictionary}"></ng-template>
+
+    </div>
+
+    <br />
+
+    <div *ngIf="model.PersBeh > 0">
+     {{"zuschlagPersonenBehinderungText" | translate}}: {{resultCalculationDictionary["zuschlagPersBeh"].toFixed(2)}}€ <br /><br />
+    </div>
+
+    <div *ngIf="!model.Minderjaehrige">
+     {{"childrenHint" | translate}}
+     <br /><br />
+    </div>
+
+    <div *ngIf="model.Minderjaehrige">
+     {{"Summe" | translate}} {{"Geldleistung" | translate}}: <b>{{totalGeldLeistungWithEverything ? totalGeldLeistungWithEverything.toFixed(2) : 0}}€</b> <br />
+     {{"Summe" | translate}} {{"Sachleistung" | translate}}: <b>{{totalSachWohn ? totalSachWohn.toFixed(2) : 0}}€ </b>
+     <span class="text-danger">{{resultCalculationDictionary['Wohnaufwand'] > totalSachWohn ? this.translate.instant("housingGreaterAllowance") : ""}}</span>
+
+     <!-- https://ng-bootstrap.github.io/#/components/tooltip/examples -->
+
+     <ng-template #tipContent>({{"capLiving" | translate}} {{resultCalculationDictionary['Wohnaufwand']}}€; {{"allowance" | translate}} {{totalSach ? totalSach.toFixed(2) : 0}}€)</ng-template>
+
+     <!-- https://github.com/ng-bootstrap/ng-bootstrap/issues/2169 -->
+     <!-- https://github.com/angular-ui/bootstrap/issues/3040 -->
+     <!-- https://stackoverflow.com/questions/27908339/js-touch-equivalent-for-mouseenter -->
+     <!-- https://stackoverflow.com/questions/23111671/touchenter-and-touchleave-events-support/26018227#26018227 -->
+     <!-- hover is related to ng-bootstrap issue 3630 https://github.com/ng-bootstrap/ng-bootstrap/issues/3630 -->
+
+     <button class="infoHoverButton" [ngbTooltip]="tipContent" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button>
+     <br />
+
+     {{"Summe" | translate}}: <b>{{totalAmount ? totalAmount.toFixed(2) : 0}}€</b> <br /><br />
+    </div>
+
+    <button (click)="toggleDetailsButton()" id="toggleDetailsButton" class="btn btn-primary submit-button">{{"showdetails" | translate}}</button>
+
+
+    <!-- https://stackoverflow.com/questions/41846234/how-using-inline-if-statement-inside-bracket -->
+    <!-- https://stackoverflow.com/questions/53232018/how-to-set-condition-of-a-nan-value-to-show-hide-a-view-using-ngif-angular-6 -->
+    <div id="innerresultCalc" style="display: none;">
+     <div *ngFor="let item of resultCalculationDictionary | keyvalue: originalOrder">
+      <ng-template #tipContentCalc>({{resultCalculationFormulas[item.key]}})</ng-template>
+
+      <div *ngIf="isNotANumber(item.value)"></div> <!-- empty div if NaN -->
+      <!-- hover is related to ng-bootstrap issue 3630 https://github.com/ng-bootstrap/ng-bootstrap/issues/3630 -->
+      <div *ngIf="!isNotANumber(item.value)">{{item.key | translate}}: <b>{{item.value.toFixed(2)}}€</b> <button class="infoHoverButton" [ngbTooltip]="tipContentCalc" triggers="hover"><fa-icon [icon]="faInfoCircle"></fa-icon></button>
+      </div> <!-- else, show value -->
+     </div>
+    </div>
+   </div>
+
+  </div>
+
+ </div>
+
+ <div class="row">
+  <div class="col-lg-6">
+   <!-- <button (click)="refresh()" class="btn btn-primary submit-button">{{"restart" | translate}}</button> -->
+
+   <div *ngIf="getFormType() == 'calculator'">
+    <!-- calculator -->
+    <br />
+   </div>
+
+   <div *ngIf="getFormType() == 'questionnaire'">
+    <!-- questionnaire -->
+    <br />
+    <button (click)="stepBack()" class="btn btn-primary submit-button">{{"stepback" | translate}}</button>
+   </div>
+
+   <!-- disable for release (button retrieves json of formState) -->
+   <!-- <br /> -->
+   <!-- <button (click)="showFormState()" class="btn btn-primary submit-button">Status</button> -->
+
+  </div>
+
+  <div class="col-lg-6">
+
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p style="margin:0 auto; text-align: center">{{"imprinttext" | translate}} <a href="https://diakonie.at" target="_blank">Diakonie Österreich</a></p>
+ </div>
+
+ <div class="row">
+  <p style="margin:0 auto;">
+   <a href='&#109;ailto&#58;&#101;m%61&#110;&#117;e&#108;%&#50;Es&#116;&#97;d&#37;&#54;C%65%7&#50;&#64;&#117;&#37;6&#69;iv%6&#57;e&#46;&#37;61%63&#46;&#97;t'>ema&#110;u&#101;l&#46;s&#116;adle&#114;&#64;uni&#118;ie&#46;ac&#46;a&#116;</a>
+  </p>
+ </div>
+
+
+</div>
+
+
+
+
+
+

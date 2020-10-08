@@ -1,0 +1,794 @@
+{
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+        "name": "dag",
+        "graph": {
+            "bb": "\"-5.55,-5.682,4.172,7.617\""
+        }
+    },
+    "nodes": [
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"1 Elternteil\"",
+            "pos": "\"-3.102,2.763\"",
+            "id": "1 Elternteil"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\">5 Kinder\"",
+            "pos": "\"-3.142,4.515\"",
+            "id": ">5Kinder"
+        },
+        {
+            "question": null,
+            "pos": "\"0.637,-2.069\"",
+            "id": "AnmeldebescheinigungArbeitnehmerSelbständig"
+        },
+        {
+            "question": null,
+            "pos": "\"0.692,0.738\"",
+            "id": "AsylberechtigtSubsidiär"
+        },
+        {
+            "answer": null,
+            "pos": "\"-0.177,0.781\"",
+            "id": "AsylberechtigtSubsidiärJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"0.708,1.949\"",
+            "id": "AsylberechtigtSubsidiärNein"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nicht Überschritten\"",
+            "pos": "\"-1.681,6.269\"",
+            "id": "EinkommensgrenzeNichtÜberschritten"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Überschritten\"",
+            "pos": "\"-1.395,5.037\"",
+            "id": "EinkommensgrenzeÜberschritten"
+        },
+        {
+            "question": null,
+            "pos": "\"-0.308,5.731\"",
+            "id": "Vermögensgrenze"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nicht Überschritten\"",
+            "pos": "\"0.809,6.217\"",
+            "id": "VermögensgrenzeNichtÜberschritten"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Überschritten\"",
+            "pos": "\"0.106,4.342\"",
+            "id": "VermögensgrenzeÜberschritten"
+        },
+        {
+            "question": null,
+            "pos": "\"-2.786,-5.230\"",
+            "id": "Volljährig"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"beide Eltern\"",
+            "pos": "\"-2.403,3.953\"",
+            "id": "beide Eltern"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-3.758,-4.724\"",
+            "id": "volljährigJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-1.911,-4.924\"",
+            "id": "volljährigNein"
+        },
+        {
+            "question": null,
+            "pos": "\"-3.655,-2.221\"",
+            "id": "österreichStaatsbürger"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-3.673,-1.367\"",
+            "id": "österreichStaatsbürgerJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-2.342,-2.576\"",
+            "id": "österreichStaatsbürgerNein"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"0 Kinder\"",
+            "pos": "\"-5.109,4.585\"",
+            "id": "0Kinder"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"1 Kind\"",
+            "pos": "\"-4.709,4.559\"",
+            "id": "1Kinder"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"2 Kinder\"",
+            "pos": "\"-4.322,4.550\"",
+            "id": "2Kinder"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"3 Kinder\"",
+            "pos": "\"-3.915,4.533\"",
+            "id": "3Kinder"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"4 Kinder\"",
+            "pos": "\"-3.521,4.524\"",
+            "id": "4Kinder"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Allein\"",
+            "pos": "\"-3.529,2.415\"",
+            "id": "Allein"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-0.630,-1.607\"",
+            "id": "AnmeldebescheinigungJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"0.671,-1.263\"",
+            "id": "AnmeldebescheinigungNein"
+        },
+        {
+            "result": null,
+            "pos": "\"3.053,2.921\"",
+            "id": "AnspruchWahrscheinlich"
+        },
+        {
+            "question": null,
+            "pos": "\"-4.654,-3.299\"",
+            "id": "AsylwerberIn"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-3.679,-3.239\"",
+            "id": "AsylwerberInJa"
+        },
+        {
+            "answer": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-4.654,-2.218\"",
+            "id": "AsylwerberInNein"
+        },
+        {
+            "question": null,
+            "pos": "\"0.664,-0.605\"",
+            "id": "DaueraufenthaltDrittstaat"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-0.224,-0.475\"",
+            "id": "DaueraufenthaltDrittstaatJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"0.692,0.062\"",
+            "id": "DaueraufenthaltDrittstaatNein"
+        },
+        {
+            "question": null,
+            "pos": "\"-4.265,6.090\"",
+            "id": "Einkommensgrenze"
+        },
+        {
+            "question": null,
+            "pos": "\"-1.949,2.162\"",
+            "id": "Haushalt"
+        },
+        {
+            "question": null,
+            "pos": "\"-4.959,2.981\"",
+            "id": "Kinder"
+        },
+        {
+            "question": null,
+            "pos": "\"-3.417,-4.028\"",
+            "id": "LebensmittelpunktWien"
+        },
+        {
+            "question": null,
+            "pos": "\"2.191,6.058\"",
+            "id": "Mitwirkung"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"3.134,6.058\"",
+            "id": "MitwirkungJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"0.726,3.857\"",
+            "id": "MitwirkungNein"
+        },
+        {
+            "question": null,
+            "pos": "\"-4.544,-0.370\"",
+            "id": "PartnerInHaushalt"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-5.020,0.899\"",
+            "id": "PartnerInHaushaltJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-3.944,0.786\"",
+            "id": "PartnerInHaushaltNein"
+        },
+        {
+            "question": null,
+            "pos": "\"-1.133,-2.797\"",
+            "id": "RechtDaueraufenthaltEU"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-1.817,-1.649\"",
+            "id": "RechtDaueraufenthaltEUJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"0.658,-2.797\"",
+            "id": "RechtDaueraufenthaltEUNein"
+        },
+        {
+            "question": null,
+            "pos": "\"-0.862,1.171\"",
+            "id": "Student"
+        },
+        {
+            "answer": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-1.161,2.099\"",
+            "id": "StudentJa"
+        },
+        {
+            "answer": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-2.890,0.246\"",
+            "id": "StudentNein"
+        },
+        {
+            "question": null,
+            "pos": "\"3.100,5.226\"",
+            "id": "VermittlungAMS"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"3.492,3.691\"",
+            "id": "VermittlungAMSJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"2.055,3.684\"",
+            "id": "VermuttlingAMSNein"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"WG\"",
+            "pos": "\"-2.734,3.279\"",
+            "id": "WG"
+        },
+        {
+            "result": null,
+            "pos": "\"3.358,-3.204\"",
+            "id": "ende"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-4.858,-4.300\"",
+            "id": "lebensmittelpunktWienJa"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-1.986,-3.913\"",
+            "id": "lebensmittelpunktWienNein"
+        },
+        {
+            "result": null,
+            "pos": "\"-1.568,3.528\"",
+            "id": "nichtWahrscheinlich"
+        },
+        {
+            "question": null,
+            "pos": "\"-2.845,1.630\"",
+            "id": "unter25"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Ja\"",
+            "pos": "\"-2.051,1.426\"",
+            "id": "unter25Ja"
+        },
+        {
+            "answer": null,
+            "result": null,
+            "answerlabel": "\"Nein\"",
+            "pos": "\"-4.239,1.656\"",
+            "id": "unter25Nein"
+        }
+    ],
+    "links": [
+        {
+            "source": "1 Elternteil",
+            "target": "Kinder",
+            "key": 0
+        },
+        {
+            "source": ">5Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "AnmeldebescheinigungArbeitnehmerSelbständig",
+            "target": "AnmeldebescheinigungJa",
+            "key": 0
+        },
+        {
+            "source": "AnmeldebescheinigungArbeitnehmerSelbständig",
+            "target": "AnmeldebescheinigungNein",
+            "key": 0
+        },
+        {
+            "source": "AsylberechtigtSubsidiär",
+            "target": "AsylberechtigtSubsidiärJa",
+            "key": 0
+        },
+        {
+            "source": "AsylberechtigtSubsidiär",
+            "target": "AsylberechtigtSubsidiärNein",
+            "key": 0
+        },
+        {
+            "source": "AsylberechtigtSubsidiärJa",
+            "target": "Student",
+            "key": 0
+        },
+        {
+            "source": "AsylberechtigtSubsidiärNein",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "EinkommensgrenzeNichtÜberschritten",
+            "target": "Vermögensgrenze",
+            "key": 0
+        },
+        {
+            "source": "EinkommensgrenzeÜberschritten",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "Vermögensgrenze",
+            "target": "VermögensgrenzeNichtÜberschritten",
+            "key": 0
+        },
+        {
+            "source": "Vermögensgrenze",
+            "target": "VermögensgrenzeÜberschritten",
+            "key": 0
+        },
+        {
+            "source": "VermögensgrenzeNichtÜberschritten",
+            "target": "Mitwirkung",
+            "key": 0
+        },
+        {
+            "source": "VermögensgrenzeÜberschritten",
+            "target": "nichtWahrscheinlich",
+            "key": 0
+        },
+        {
+            "source": "Volljährig",
+            "target": "volljährigJa",
+            "key": 0
+        },
+        {
+            "source": "Volljährig",
+            "target": "volljährigNein",
+            "key": 0
+        },
+        {
+            "source": "beide Eltern",
+            "target": "Kinder",
+            "key": 0
+        },
+        {
+            "source": "volljährigJa",
+            "target": "LebensmittelpunktWien",
+            "key": 0
+        },
+        {
+            "source": "volljährigNein",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "österreichStaatsbürger",
+            "target": "österreichStaatsbürgerJa",
+            "key": 0
+        },
+        {
+            "source": "österreichStaatsbürger",
+            "target": "österreichStaatsbürgerNein",
+            "key": 0
+        },
+        {
+            "source": "österreichStaatsbürgerJa",
+            "target": "Student",
+            "key": 0
+        },
+        {
+            "source": "österreichStaatsbürgerNein",
+            "target": "RechtDaueraufenthaltEU",
+            "key": 0
+        },
+        {
+            "source": "0Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "1Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "2Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "3Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "4Kinder",
+            "target": "Einkommensgrenze",
+            "key": 0
+        },
+        {
+            "source": "Allein",
+            "target": "Kinder",
+            "key": 0
+        },
+        {
+            "source": "AnmeldebescheinigungJa",
+            "target": "Student",
+            "key": 0
+        },
+        {
+            "source": "AnmeldebescheinigungNein",
+            "target": "DaueraufenthaltDrittstaat",
+            "key": 0
+        },
+        {
+            "source": "AsylwerberIn",
+            "target": "AsylwerberInJa",
+            "key": 0
+        },
+        {
+            "source": "AsylwerberIn",
+            "target": "AsylwerberInNein",
+            "key": 0
+        },
+        {
+            "source": "AsylwerberInJa",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "AsylwerberInNein",
+            "target": "österreichStaatsbürger",
+            "key": 0
+        },
+        {
+            "source": "DaueraufenthaltDrittstaat",
+            "target": "DaueraufenthaltDrittstaatJa",
+            "key": 0
+        },
+        {
+            "source": "DaueraufenthaltDrittstaat",
+            "target": "DaueraufenthaltDrittstaatNein",
+            "key": 0
+        },
+        {
+            "source": "DaueraufenthaltDrittstaatJa",
+            "target": "Student",
+            "key": 0
+        },
+        {
+            "source": "DaueraufenthaltDrittstaatNein",
+            "target": "AsylberechtigtSubsidiär",
+            "key": 0
+        },
+        {
+            "source": "DaueraufenthaltDrittstaatNein",
+            "target": "DaueraufenthaltDrittstaatJa",
+            "key": 0
+        },
+        {
+            "source": "Einkommensgrenze",
+            "target": "EinkommensgrenzeNichtÜberschritten",
+            "key": 0
+        },
+        {
+            "source": "Einkommensgrenze",
+            "target": "EinkommensgrenzeÜberschritten",
+            "key": 0
+        },
+        {
+            "source": "Haushalt",
+            "target": "1 Elternteil",
+            "key": 0
+        },
+        {
+            "source": "Haushalt",
+            "target": "beide Eltern",
+            "key": 0
+        },
+        {
+            "source": "Haushalt",
+            "target": "Allein",
+            "key": 0
+        },
+        {
+            "source": "Haushalt",
+            "target": "WG",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": ">5Kinder",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": "0Kinder",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": "1Kinder",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": "2Kinder",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": "3Kinder",
+            "key": 0
+        },
+        {
+            "source": "Kinder",
+            "target": "4Kinder",
+            "key": 0
+        },
+        {
+            "source": "LebensmittelpunktWien",
+            "target": "lebensmittelpunktWienJa",
+            "key": 0
+        },
+        {
+            "source": "LebensmittelpunktWien",
+            "target": "lebensmittelpunktWienNein",
+            "key": 0
+        },
+        {
+            "source": "Mitwirkung",
+            "target": "MitwirkungJa",
+            "key": 0
+        },
+        {
+            "source": "Mitwirkung",
+            "target": "MitwirkungNein",
+            "key": 0
+        },
+        {
+            "source": "MitwirkungJa",
+            "target": "VermittlungAMS",
+            "key": 0
+        },
+        {
+            "source": "MitwirkungNein",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "PartnerInHaushalt",
+            "target": "PartnerInHaushaltJa",
+            "key": 0
+        },
+        {
+            "source": "PartnerInHaushalt",
+            "target": "PartnerInHaushaltNein",
+            "key": 0
+        },
+        {
+            "source": "PartnerInHaushaltJa",
+            "target": "Kinder",
+            "key": 0
+        },
+        {
+            "source": "PartnerInHaushaltNein",
+            "target": "unter25",
+            "key": 0
+        },
+        {
+            "source": "RechtDaueraufenthaltEU",
+            "target": "RechtDaueraufenthaltEUJa",
+            "key": 0
+        },
+        {
+            "source": "RechtDaueraufenthaltEU",
+            "target": "RechtDaueraufenthaltEUNein",
+            "key": 0
+        },
+        {
+            "source": "RechtDaueraufenthaltEUJa",
+            "target": "Student",
+            "key": 0
+        },
+        {
+            "source": "RechtDaueraufenthaltEUNein",
+            "target": "AnmeldebescheinigungArbeitnehmerSelbständig",
+            "key": 0
+        },
+        {
+            "source": "Student",
+            "target": "StudentJa",
+            "key": 0
+        },
+        {
+            "source": "Student",
+            "target": "StudentNein",
+            "key": 0
+        },
+        {
+            "source": "StudentJa",
+            "target": "nichtWahrscheinlich",
+            "key": 0
+        },
+        {
+            "source": "StudentNein",
+            "target": "PartnerInHaushalt",
+            "key": 0
+        },
+        {
+            "source": "VermittlungAMS",
+            "target": "VermittlungAMSJa",
+            "key": 0
+        },
+        {
+            "source": "VermittlungAMS",
+            "target": "VermuttlingAMSNein",
+            "key": 0
+        },
+        {
+            "source": "VermittlungAMSJa",
+            "target": "AnspruchWahrscheinlich",
+            "key": 0
+        },
+        {
+            "source": "VermuttlingAMSNein",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "WG",
+            "target": "Kinder",
+            "key": 0
+        },
+        {
+            "source": "lebensmittelpunktWienJa",
+            "target": "AsylwerberIn",
+            "key": 0
+        },
+        {
+            "source": "lebensmittelpunktWienNein",
+            "target": "ende",
+            "key": 0
+        },
+        {
+            "source": "unter25",
+            "target": "unter25Ja",
+            "key": 0
+        },
+        {
+            "source": "unter25",
+            "target": "unter25Nein",
+            "key": 0
+        },
+        {
+            "source": "unter25Ja",
+            "target": "Haushalt",
+            "key": 0
+        },
+        {
+            "source": "unter25Nein",
+            "target": "Kinder",
+            "key": 0
+        }
+    ]
+}

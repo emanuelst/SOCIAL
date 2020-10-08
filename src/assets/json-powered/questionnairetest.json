@@ -1,0 +1,695 @@
+[
+    {
+        "myFormType": "questionnaire"
+    },
+    {
+        "question": null,
+        "key": "Volljährig",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Volljährig",
+            "translate": "true",
+            "addlinfo": "This is my additional info",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "volljährigJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "volljährigNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Volljährig"
+    },
+    {
+        "question": null,
+        "key": "LebensmittelpunktWien",
+        "type": "radio",
+        "templateOptions": {
+            "label": "LebensmittelpunktWien",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "lebensmittelpunktWienJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "lebensmittelpunktWienNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Volljährig !== 'volljährigJa' || model.LebensmittelpunktWien"
+    },
+    {
+        "question": null,
+        "key": "AsylwerberIn",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AsylwerberIn",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "AsylwerberInJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "AsylwerberInNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.LebensmittelpunktWien !== 'lebensmittelpunktWienJa' || model.AsylwerberIn"
+    },
+    {
+        "question": null,
+        "key": "österreichStaatsbürger",
+        "type": "radio",
+        "templateOptions": {
+            "label": "österreichStaatsbürger",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "österreichStaatsbürgerJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "österreichStaatsbürgerNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AsylwerberIn !== 'AsylwerberInNein' || model.österreichStaatsbürger"
+    },
+    {
+        "question": null,
+        "key": "RechtDaueraufenthaltEU",
+        "type": "radio",
+        "templateOptions": {
+            "label": "RechtDaueraufenthaltEU",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "RechtDaueraufenthaltEUJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "RechtDaueraufenthaltEUNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.österreichStaatsbürger !== 'österreichStaatsbürgerNein' || model.RechtDaueraufenthaltEU"
+    },
+    {
+        "question": null,
+        "key": "AnmeldebescheinigungArbeitnehmerSelbständig",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AnmeldebescheinigungArbeitnehmerSelbständig",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "AnmeldebescheinigungJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "AnmeldebescheinigungNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.RechtDaueraufenthaltEU !== 'RechtDaueraufenthaltEUNein' || model.AnmeldebescheinigungArbeitnehmerSelbständig"
+    },
+    {
+        "question": null,
+        "key": "DaueraufenthaltDrittstaat",
+        "type": "radio",
+        "templateOptions": {
+            "label": "DaueraufenthaltDrittstaat",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "DaueraufenthaltDrittstaatJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "DaueraufenthaltDrittstaatNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AnmeldebescheinigungArbeitnehmerSelbständig !== 'AnmeldebescheinigungNein' || model.DaueraufenthaltDrittstaat"
+    },
+    {
+        "question": null,
+        "key": "AsylberechtigtSubsidiär",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AsylberechtigtSubsidiär",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "AsylberechtigtSubsidiärJa",
+                    "value": "AsylberechtigtSubsidiärJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "AsylberechtigtSubsidiärNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.DaueraufenthaltDrittstaat !== 'DaueraufenthaltDrittstaatNein' || model.AsylberechtigtSubsidiär"
+    },
+    {
+        "question": null,
+        "key": "Student",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Student",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "StudentJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "StudentNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärJa' && model.österreichStaatsbürger !== 'österreichStaatsbürgerJa' && model.AnmeldebescheinigungArbeitnehmerSelbständig !== 'AnmeldebescheinigungJa' && model.DaueraufenthaltDrittstaat !== 'DaueraufenthaltDrittstaatJa' && model.RechtDaueraufenthaltEU !== 'RechtDaueraufenthaltEUJa' || model.Student"
+    },
+    {
+        "question": null,
+        "key": "PartnerInHaushalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "PartnerInHaushalt",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "PartnerInHaushaltJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "PartnerInHaushaltNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Student !== 'StudentNein' || model.PartnerInHaushalt"
+    },
+    {
+        "question": null,
+        "key": "unter25",
+        "type": "radio",
+        "templateOptions": {
+            "label": "unter25",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "unter25Ja",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "unter25Nein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.PartnerInHaushalt !== 'PartnerInHaushaltNein' || model.unter25"
+    },
+    {
+        "question": null,
+        "key": "Haushalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Haushalt",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "beide Eltern",
+                    "value": "beideEltern",
+                    "sort": "\"1\""
+                },
+                {
+                    "label": "WG",
+                    "value": "WG",
+                    "sort": "\"2\""
+                },
+                {
+                    "label": "1 Elternteil",
+                    "value": "1Elternteil",
+                    "sort": "\"3\""
+                },
+                {
+                    "label": "Allein",
+                    "value": "Allein",
+                    "sort": "\"4\""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.unter25 !== 'unter25Ja' || model.Haushalt"
+    },
+    {
+        "input": null,
+        "key": "kinder",
+        "type": "input",
+        "templateOptions": {
+            "label": "kinder",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "kinderGr0",
+                    "value": "kinderGr0",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Haushalt !== '1Elternteil' && model.Haushalt !== 'Allein' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.Haushalt !== 'WG' && model.Haushalt !== 'beideEltern' && model.unter25 !== 'unter25Nein' || model.kinderGr0"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"kinder>0\"",
+        "key": "kinderGr0",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinderGr0",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "einkommen",
+                    "value": "einkommen",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.kinder || !(model.kinder>0) || model.kinderGr0"
+    },
+    {
+        "input": null,
+        "key": "einkommen",
+        "type": "input",
+        "templateOptions": {
+            "label": "einkommen",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "EinkommensgrenzeNichtÜberschritten",
+                    "value": "EinkommensgrenzeNichtÜberschritten",
+                    "sort": ""
+                },
+                {
+                    "label": "EinkommensgrenzeÜberschritten",
+                    "value": "EinkommensgrenzeÜberschritten",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.kinderGr0 !== 'einkommen' || model.EinkommensgrenzeNichtÜberschritten || model.EinkommensgrenzeÜberschritten"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"einkommen>5000\"",
+        "key": "EinkommensgrenzeÜberschritten",
+        "type": "radio",
+        "templateOptions": {
+            "label": "EinkommensgrenzeÜberschritten",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "ende",
+                    "value": "ende",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.einkommen || !(model.einkommen>5000) || model.EinkommensgrenzeÜberschritten"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"einkommen<5000\"",
+        "key": "EinkommensgrenzeNichtÜberschritten",
+        "type": "radio",
+        "templateOptions": {
+            "label": "EinkommensgrenzeNichtÜberschritten",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "vermoegen",
+                    "value": "vermoegen",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.einkommen || !(model.einkommen<5000) || model.EinkommensgrenzeNichtÜberschritten"
+    },
+    {
+        "input": null,
+        "key": "vermoegen",
+        "type": "input",
+        "templateOptions": {
+            "label": "vermoegen",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "VermögensgrenzeÜberschritten",
+                    "value": "VermögensgrenzeÜberschritten",
+                    "sort": ""
+                },
+                {
+                    "label": "vermUnterschr",
+                    "value": "vermUnterschr",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.EinkommensgrenzeNichtÜberschritten !== 'vermoegen' || model.VermögensgrenzeÜberschritten || model.vermUnterschr"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"vermoegen<4586.75\"",
+        "key": "vermUnterschr",
+        "type": "radio",
+        "templateOptions": {
+            "label": "vermUnterschr",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Mitwirkung",
+                    "value": "Mitwirkung",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.vermoegen || !(model.vermoegen<4586.75) || model.vermUnterschr"
+    },
+    {
+        "question": null,
+        "key": "Mitwirkung",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Mitwirkung",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "MitwirkungJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "MitwirkungNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.vermUnterschr !== 'Mitwirkung' || model.Mitwirkung"
+    },
+    {
+        "question": null,
+        "key": "VermittlungAMS",
+        "type": "radio",
+        "templateOptions": {
+            "label": "VermittlungAMS",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Ja",
+                    "value": "VermittlungAMSJa",
+                    "sort": ""
+                },
+                {
+                    "label": "Nein",
+                    "value": "VermuttlingAMSNein",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Mitwirkung !== 'MitwirkungJa' || model.VermittlungAMS"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"kinder<5\"",
+        "key": "kinderKl5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinderKl5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "ResultKl5",
+                    "value": "ResultKl5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.VermittlungAMS !== 'VermittlungAMSJa' || !(model.kinder<5) || model.kinderKl5"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"kinder*1000\"",
+        "key": "ResultKl5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "ResultKl5",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.kinderKl5 !== 'ResultKl5' || model.ResultKl5"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"kinder>5\"",
+        "key": "kinderGr5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "kinderGr5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "AnspruchWahrscheinlich",
+                    "value": "AnspruchWahrscheinlich",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.VermittlungAMS !== 'VermittlungAMSJa' || !(model.kinder>5) || model.kinderGr5"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"917.35+kinder*247.68-einkommen\"",
+        "key": "AnspruchWahrscheinlich",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AnspruchWahrscheinlich",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.kinderGr5 !== 'AnspruchWahrscheinlich' || model.AnspruchWahrscheinlich"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"vermoegen>4586.75\"",
+        "key": "VermögensgrenzeÜberschritten",
+        "type": "radio",
+        "templateOptions": {
+            "label": "VermögensgrenzeÜberschritten",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "nichtWahrscheinlich",
+                    "value": "nichtWahrscheinlich",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.vermoegen || !(model.vermoegen>4586.75) || model.VermögensgrenzeÜberschritten"
+    },
+    {
+        "result": null,
+        "key": "nichtWahrscheinlich",
+        "type": "radio",
+        "templateOptions": {
+            "label": "nichtWahrscheinlich",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.VermögensgrenzeÜberschritten !== 'nichtWahrscheinlich' && model.Student !== 'StudentJa' || model.nichtWahrscheinlich"
+    },
+    {
+        "result": null,
+        "resultcalculation": "\"kinder*1000\"",
+        "key": "ende",
+        "type": "radio",
+        "templateOptions": {
+            "label": "ende",
+            "translate": "true",
+            "addlinfo": "This is the end."
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärNein' && model.EinkommensgrenzeÜberschritten !== 'ende' && model.Volljährig !== 'volljährigNein' && model.AsylwerberIn !== 'AsylwerberInJa' && model.Mitwirkung !== 'MitwirkungNein' && model.VermittlungAMS !== 'VermuttlingAMSNein' && model.LebensmittelpunktWien !== 'lebensmittelpunktWienNein' || model.ende"
+    }
+]

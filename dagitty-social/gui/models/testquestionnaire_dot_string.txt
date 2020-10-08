@@ -1,0 +1,19 @@
+dag {
+bb="-0.5,-0.5,0.5,0.5"
+Amount [input,pos="-0.128,-0.232"]
+AmountGreater4 [decision,decisioncalculation="Amount>4",pos="-0.260,-0.129"]
+AmountLess5 [decision,decisioncalculation="Amount<5",pos="0.019,-0.128"]
+Answer1 [answer,pos="-0.263,-0.318"]
+Answer2 [answer,pos="0.016,-0.325"]
+Question1 [question,pos="-0.134,-0.450"]
+ResultAmountGreater4 [result,pos="-0.259,-0.012"]
+ResultAmountLess4 [result,pos="0.021,-0.011"]
+Amount -> AmountGreater4
+Amount -> AmountLess5
+AmountGreater4 -> ResultAmountGreater4
+AmountLess5 -> ResultAmountLess4
+Answer1 -> Amount
+Answer2 -> Amount
+Question1 -> Answer1
+Question1 -> Answer2
+}

@@ -1,0 +1,135 @@
+[
+    {
+        "myFormType": "questionnaire"
+    },
+    {
+        "question": null,
+        "key": "Question1",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Question1",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "Answer1",
+                    "value": "Answer1",
+                    "sort": ""
+                },
+                {
+                    "label": "Answer2",
+                    "value": "Answer2",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Question1"
+    },
+    {
+        "input": null,
+        "key": "Amount",
+        "type": "input",
+        "templateOptions": {
+            "label": "Amount",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "AmountGreater4",
+                    "value": "AmountGreater4",
+                    "sort": ""
+                },
+                {
+                    "label": "AmountLess5",
+                    "value": "AmountLess5",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.Question1 !== 'Answer1' && model.Question1 !== 'Answer2' || model.AmountGreater4 || model.AmountLess5"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"Amount<5\"",
+        "key": "AmountLess5",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AmountLess5",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "ResultAmountLess4",
+                    "value": "ResultAmountLess4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Amount || !(model.Amount<5) || model.AmountLess5"
+    },
+    {
+        "result": null,
+        "key": "ResultAmountLess4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "ResultAmountLess4",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AmountLess5 !== 'ResultAmountLess4' || model.ResultAmountLess4"
+    },
+    {
+        "decision": null,
+        "decisioncalculation": "\"Amount>4\"",
+        "key": "AmountGreater4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AmountGreater4",
+            "translate": "true",
+            "options": [
+                {
+                    "label": "ResultAmountGreater4",
+                    "value": "ResultAmountGreater4",
+                    "sort": ""
+                }
+            ]
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "!model.Amount || !(model.Amount>4) || model.AmountGreater4"
+    },
+    {
+        "result": null,
+        "key": "ResultAmountGreater4",
+        "type": "radio",
+        "templateOptions": {
+            "label": "ResultAmountGreater4",
+            "translate": "true"
+        },
+        "wrappers": [
+            "form-field",
+            "addons",
+            "custompanel"
+        ],
+        "hideExpression": "model.AmountGreater4 !== 'ResultAmountGreater4' || model.ResultAmountGreater4"
+    }
+]

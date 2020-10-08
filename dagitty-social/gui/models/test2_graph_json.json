@@ -1,0 +1,54 @@
+{
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+        "name": "dag",
+        "graph": {
+            "bb": "\"0,0,1,1\""
+        }
+    },
+    "nodes": [
+        {
+            "question": null,
+            "pos": "\"0.250,0.291\"",
+            "id": "v1"
+        },
+        {
+            "answer": null,
+            "pos": "\"0.198,0.488\"",
+            "id": "v2"
+        },
+        {
+            "answer": null,
+            "pos": "\"0.318,0.514\"",
+            "id": "v3"
+        },
+        {
+            "question": null,
+            "pos": "\"0.241,0.692\"",
+            "id": "v4"
+        }
+    ],
+    "links": [
+        {
+            "source": "v1",
+            "target": "v2",
+            "key": 0
+        },
+        {
+            "source": "v1",
+            "target": "v3",
+            "key": 0
+        },
+        {
+            "source": "v2",
+            "target": "v4",
+            "key": 0
+        },
+        {
+            "source": "v3",
+            "target": "v4",
+            "key": 0
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+dag {
+bb="0,0,1,1"
+finalquestion [question,questionlabel="mylabel123",pos="0.576,0.501"]
+inputnumber [input,pos="0.579,0.255"]
+numberGreater5 [decision,decisioncalculation="inputnumber>=5",pos="0.404,0.399"]
+numberLess5 [decision,decisioncalculation="inputnumber<5",pos="0.762,0.391"]
+result [result,resultlabel="This is the result",resultcalculation="inputnumber*1000",pos="0.610,0.816"]
+start [question,questionlabel="asdasd",pos="0.565,0.068"]
+startno [answer,answerlabel="no",pos="0.743,0.158"]
+startyes [answer,answerlabel="yes",pos="0.390,0.162"]
+yes [answer,answerlabel="Final Yes",pos="0.607,0.655"]
+finalquestion -> yes
+inputnumber -> numberGreater5
+inputnumber -> numberLess5
+numberGreater5 -> finalquestion
+numberLess5 -> finalquestion
+start -> startno
+start -> startyes
+startno -> inputnumber
+startyes -> inputnumber
+yes -> result
+}

@@ -1,0 +1,96 @@
+{
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+        "name": "dag",
+        "graph": {
+            "bb": "\"-0.5,-0.5,0.5,0.5\""
+        }
+    },
+    "nodes": [
+        {
+            "input": null,
+            "pos": "\"-0.128,-0.232\"",
+            "id": "Amount"
+        },
+        {
+            "decision": null,
+            "decisioncalculation": "\"Amount>4\"",
+            "pos": "\"-0.260,-0.129\"",
+            "id": "AmountGreater4"
+        },
+        {
+            "decision": null,
+            "decisioncalculation": "\"Amount<5\"",
+            "pos": "\"0.019,-0.128\"",
+            "id": "AmountLess5"
+        },
+        {
+            "answer": null,
+            "pos": "\"-0.263,-0.318\"",
+            "id": "Answer1"
+        },
+        {
+            "answer": null,
+            "pos": "\"0.016,-0.325\"",
+            "id": "Answer2"
+        },
+        {
+            "question": null,
+            "pos": "\"-0.134,-0.450\"",
+            "id": "Question1"
+        },
+        {
+            "result": null,
+            "pos": "\"-0.259,-0.012\"",
+            "id": "ResultAmountGreater4"
+        },
+        {
+            "result": null,
+            "pos": "\"0.021,-0.011\"",
+            "id": "ResultAmountLess4"
+        }
+    ],
+    "links": [
+        {
+            "source": "Amount",
+            "target": "AmountGreater4",
+            "key": 0
+        },
+        {
+            "source": "Amount",
+            "target": "AmountLess5",
+            "key": 0
+        },
+        {
+            "source": "AmountGreater4",
+            "target": "ResultAmountGreater4",
+            "key": 0
+        },
+        {
+            "source": "AmountLess5",
+            "target": "ResultAmountLess4",
+            "key": 0
+        },
+        {
+            "source": "Answer1",
+            "target": "Amount",
+            "key": 0
+        },
+        {
+            "source": "Answer2",
+            "target": "Amount",
+            "key": 0
+        },
+        {
+            "source": "Question1",
+            "target": "Answer1",
+            "key": 0
+        },
+        {
+            "source": "Question1",
+            "target": "Answer2",
+            "key": 0
+        }
+    ]
+}

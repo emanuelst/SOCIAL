@@ -1,0 +1,135 @@
+dag {
+bb="-5.55,-5.682,4.172,7.617"
+"1 Elternteil" [answer,answerlabel="1 Elternteil",answersort="3",pos="-2.301,2.967"]
+"AnmeldebescheinigungArbeitnehmerSelbständig" [question,pos="1.217,-3.534"]
+"AsylberechtigtSubsidiär" [question,pos="0.558,-0.571"]
+"AsylberechtigtSubsidiärJa" [answer,pos="-0.752,-0.303"]
+"AsylberechtigtSubsidiärNein" [answer,answerlabel="Nein",pos="0.684,0.420"]
+"EinkommensgrenzeNichtÜberschritten" [decision,decisioncalculation="einkommen<5000",pos="-0.695,6.181"]
+"EinkommensgrenzeÜberschritten" [decision,decisioncalculation="einkommen>5000",pos="-1.271,5.041"]
+"VermögensgrenzeÜberschritten" [decision,decisioncalculation="vermoegen>4586.75",pos="0.310,4.807"]
+"Volljährig" [question,addlinfo="This is my additional info",pos="-4.863,-5.249"]
+"beide Eltern" [answer,answerlabel="beide Eltern",answersort="1",pos="-0.805,2.834"]
+"volljährigJa" [answer,answerlabel="Ja",pos="-3.607,-5.073"]
+"volljährigNein" [answer,answerlabel="Nein",pos="-0.463,-5.424"]
+"österreichStaatsbürger" [question,pos="-4.998,-2.675"]
+"österreichStaatsbürgerJa" [answer,answerlabel="Ja",pos="-4.592,-1.913"]
+"österreichStaatsbürgerNein" [answer,answerlabel="Nein",pos="-3.499,-2.481"]
+Allein [answer,answerlabel="Allein",answersort="4",pos="-2.975,2.951"]
+AnmeldebescheinigungJa [answer,answerlabel="Ja",pos="-0.544,-2.553"]
+AnmeldebescheinigungNein [answer,answerlabel="Nein",pos="0.973,-2.791"]
+AnspruchWahrscheinlich [result,resultcalculation="917.35+kinder*247.68-einkommen",pos="3.592,-0.588"]
+AsylwerberIn [question,pos="-4.764,-3.555"]
+AsylwerberInJa [answer,answerlabel="Ja",pos="-0.662,-3.999"]
+AsylwerberInNein [answer,answerlabel="Nein",pos="-3.580,-3.287"]
+DaueraufenthaltDrittstaat [question,pos="0.666,-2.058"]
+DaueraufenthaltDrittstaatJa [answer,answerlabel="Ja",pos="-0.843,-1.665"]
+DaueraufenthaltDrittstaatNein [answer,answerlabel="Nein",pos="0.639,-1.304"]
+Haushalt [question,pos="-1.836,1.577"]
+LebensmittelpunktWien [question,pos="-4.764,-4.464"]
+Mitwirkung [question,pos="2.266,4.726"]
+MitwirkungJa [answer,answerlabel="Ja",pos="3.015,4.189"]
+MitwirkungNein [answer,answerlabel="Nein",pos="1.181,4.075"]
+PartnerInHaushalt [question,pos="-4.574,-0.086"]
+PartnerInHaushaltJa [answer,answerlabel="Ja",pos="-4.888,0.875"]
+PartnerInHaushaltNein [answer,answerlabel="Nein",pos="-3.159,0.691"]
+RechtDaueraufenthaltEU [question,pos="-2.071,-3.111"]
+RechtDaueraufenthaltEUJa [answer,answerlabel="Ja",pos="-2.198,-2.244"]
+RechtDaueraufenthaltEUNein [answer,answerlabel="Nein",pos="-0.553,-3.297"]
+ResultKl5 [result,resultcalculation="kinder*1000",pos="2.851,0.349"]
+Student [question,pos="-3.165,-1.459"]
+StudentJa [answer,answerlabel="Ja",pos="-2.541,-0.303"]
+StudentNein [answer,answerlabel="Nein",pos="-4.610,-0.953"]
+VermittlungAMS [question,pos="2.419,3.580"]
+VermittlungAMSJa [answer,answerlabel="Ja",pos="3.497,2.950"]
+VermuttlingAMSNein [answer,answerlabel="Nein",pos="2.049,2.754"]
+WG [answer,answerlabel="WG",answersort="2",pos="-1.688,2.934"]
+einkommen [input,pos="-2.890,5.911"]
+ende [result,resultcalculation="kinder*1000",addlinfo="This is the end.",pos="3.228,-2.182"]
+kinder [input,pos="-4.655,5.944"]
+kinderGr0 [decision,decisioncalculation="kinder>0",pos="-3.736,6.881"]
+kinderGr5 [decision,decisioncalculation="kinder>5",pos="3.592,1.112"]
+kinderKl5 [decision,decisioncalculation="kinder<5",pos="2.718,1.750"]
+lebensmittelpunktWienJa [answer,answerlabel="Ja",pos="-3.472,-4.216"]
+lebensmittelpunktWienNein [answer,answerlabel="Nein",pos="-0.590,-4.773"]
+nichtWahrscheinlich [result,pos="0.323,1.525"]
+unter25 [question,pos="-3.951,1.701"]
+unter25Ja [answer,answerlabel="Ja",pos="-3.147,1.618"]
+unter25Nein [answer,answerlabel="Nein",pos="-4.018,2.853"]
+vermUnterschr [decision,decisioncalculation="vermoegen<4586.75",pos="3.142,5.292"]
+vermoegen [input,pos="1.512,6.418"]
+"1 Elternteil" -> kinder
+"AnmeldebescheinigungArbeitnehmerSelbständig" -> AnmeldebescheinigungJa
+"AnmeldebescheinigungArbeitnehmerSelbständig" -> AnmeldebescheinigungNein
+"AsylberechtigtSubsidiär" -> "AsylberechtigtSubsidiärJa"
+"AsylberechtigtSubsidiär" -> "AsylberechtigtSubsidiärNein"
+"AsylberechtigtSubsidiärJa" -> Student
+"AsylberechtigtSubsidiärNein" -> ende
+"EinkommensgrenzeNichtÜberschritten" -> vermoegen
+"EinkommensgrenzeÜberschritten" -> ende
+"VermögensgrenzeÜberschritten" -> nichtWahrscheinlich
+"Volljährig" -> "volljährigJa"
+"Volljährig" -> "volljährigNein"
+"beide Eltern" -> kinder
+"volljährigJa" -> LebensmittelpunktWien
+"volljährigNein" -> ende
+"österreichStaatsbürger" -> "österreichStaatsbürgerJa"
+"österreichStaatsbürger" -> "österreichStaatsbürgerNein"
+"österreichStaatsbürgerJa" -> Student
+"österreichStaatsbürgerNein" -> RechtDaueraufenthaltEU
+Allein -> kinder
+AnmeldebescheinigungJa -> Student
+AnmeldebescheinigungNein -> DaueraufenthaltDrittstaat
+AsylwerberIn -> AsylwerberInJa
+AsylwerberIn -> AsylwerberInNein
+AsylwerberInJa -> ende
+AsylwerberInNein -> "österreichStaatsbürger"
+DaueraufenthaltDrittstaat -> DaueraufenthaltDrittstaatJa
+DaueraufenthaltDrittstaat -> DaueraufenthaltDrittstaatNein
+DaueraufenthaltDrittstaatJa -> Student
+DaueraufenthaltDrittstaatNein -> "AsylberechtigtSubsidiär"
+DaueraufenthaltDrittstaatNein -> DaueraufenthaltDrittstaatJa
+Haushalt -> "1 Elternteil"
+Haushalt -> "beide Eltern"
+Haushalt -> Allein
+Haushalt -> WG
+LebensmittelpunktWien -> lebensmittelpunktWienJa
+LebensmittelpunktWien -> lebensmittelpunktWienNein
+Mitwirkung -> MitwirkungJa
+Mitwirkung -> MitwirkungNein
+MitwirkungJa -> VermittlungAMS
+MitwirkungNein -> ende
+PartnerInHaushalt -> PartnerInHaushaltJa
+PartnerInHaushalt -> PartnerInHaushaltNein
+PartnerInHaushaltJa -> kinder
+PartnerInHaushaltNein -> unter25
+RechtDaueraufenthaltEU -> RechtDaueraufenthaltEUJa
+RechtDaueraufenthaltEU -> RechtDaueraufenthaltEUNein
+RechtDaueraufenthaltEUJa -> Student
+RechtDaueraufenthaltEUNein -> "AnmeldebescheinigungArbeitnehmerSelbständig"
+Student -> StudentJa
+Student -> StudentNein
+StudentJa -> nichtWahrscheinlich
+StudentNein -> PartnerInHaushalt
+VermittlungAMS -> VermittlungAMSJa
+VermittlungAMS -> VermuttlingAMSNein
+VermittlungAMSJa -> kinderGr5
+VermittlungAMSJa -> kinderKl5
+VermuttlingAMSNein -> ende
+WG -> kinder
+einkommen -> "EinkommensgrenzeNichtÜberschritten"
+einkommen -> "EinkommensgrenzeÜberschritten"
+kinder -> kinderGr0
+kinderGr0 -> einkommen
+kinderGr5 -> AnspruchWahrscheinlich
+kinderKl5 -> ResultKl5
+lebensmittelpunktWienJa -> AsylwerberIn
+lebensmittelpunktWienNein -> ende
+unter25 -> unter25Ja
+unter25 -> unter25Nein
+unter25Ja -> Haushalt
+unter25Nein -> kinder
+vermUnterschr -> Mitwirkung
+vermoegen -> "VermögensgrenzeÜberschritten"
+vermoegen -> vermUnterschr
+}

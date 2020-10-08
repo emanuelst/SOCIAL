@@ -1,0 +1,346 @@
+[
+    {
+        "key": "Volljährig",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Volljährig",
+            "options": [
+                {
+                    "label": "volljährigJa",
+                    "value": "volljährigJa"
+                },
+                {
+                    "label": "volljährigNein",
+                    "value": "volljährigNein"
+                }
+            ]
+        }
+    },
+    {
+        "key": "LebensmittelpunktWien",
+        "type": "radio",
+        "templateOptions": {
+            "label": "LebensmittelpunktWien",
+            "options": [
+                {
+                    "label": "lebensmittelpunktWienJa",
+                    "value": "lebensmittelpunktWienJa"
+                },
+                {
+                    "label": "lebensmittelpunktWienNein",
+                    "value": "lebensmittelpunktWienNein"
+                }
+            ]
+        },
+        "hideExpression": "model.Volljährig !== 'volljährigJa'"
+    },
+    {
+        "key": "AsylwerberIn",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AsylwerberIn",
+            "options": [
+                {
+                    "label": "AsylwerberInJa",
+                    "value": "AsylwerberInJa"
+                },
+                {
+                    "label": "AsylwerberInNein",
+                    "value": "AsylwerberInNein"
+                }
+            ]
+        },
+        "hideExpression": "model.LebensmittelpunktWien !== 'lebensmittelpunktWienJa'"
+    },
+    {
+        "key": "österreichStaatsbürger",
+        "type": "radio",
+        "templateOptions": {
+            "label": "österreichStaatsbürger",
+            "options": [
+                {
+                    "label": "österreichStaatsbürgerJa",
+                    "value": "österreichStaatsbürgerJa"
+                },
+                {
+                    "label": "österreichStaatsbürgerNein",
+                    "value": "österreichStaatsbürgerNein"
+                }
+            ]
+        },
+        "hideExpression": "model.AsylwerberIn !== 'AsylwerberInNein'"
+    },
+    {
+        "key": "RechtDaueraufenthaltEU",
+        "type": "radio",
+        "templateOptions": {
+            "label": "RechtDaueraufenthaltEU",
+            "options": [
+                {
+                    "label": "RechtDaueraufenthaltEUJa",
+                    "value": "RechtDaueraufenthaltEUJa"
+                },
+                {
+                    "label": "RechtDaueraufenthaltEUNein",
+                    "value": "RechtDaueraufenthaltEUNein"
+                }
+            ]
+        },
+        "hideExpression": "model.österreichStaatsbürger !== 'österreichStaatsbürgerNein'"
+    },
+    {
+        "key": "AnmeldebescheinigungArbeitnehmerSelbständig",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AnmeldebescheinigungArbeitnehmerSelbständig",
+            "options": [
+                {
+                    "label": "AnmeldebescheinigungJa",
+                    "value": "AnmeldebescheinigungJa"
+                },
+                {
+                    "label": "AnmeldebescheinigungNein",
+                    "value": "AnmeldebescheinigungNein"
+                }
+            ]
+        },
+        "hideExpression": "model.RechtDaueraufenthaltEU !== 'RechtDaueraufenthaltEUNein'"
+    },
+    {
+        "key": "DaueraufenthaltDrittstaat",
+        "type": "radio",
+        "templateOptions": {
+            "label": "DaueraufenthaltDrittstaat",
+            "options": [
+                {
+                    "label": "DaueraufenthaltDrittstaatJa",
+                    "value": "DaueraufenthaltDrittstaatJa"
+                },
+                {
+                    "label": "DaueraufenthaltDrittstaatNein",
+                    "value": "DaueraufenthaltDrittstaatNein"
+                }
+            ]
+        },
+        "hideExpression": "model.AnmeldebescheinigungArbeitnehmerSelbständig !== 'AnmeldebescheinigungNein'"
+    },
+    {
+        "key": "AsylberechtigtSubsidiär",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AsylberechtigtSubsidiär",
+            "options": [
+                {
+                    "label": "AsylberechtigtSubsidiärJa",
+                    "value": "AsylberechtigtSubsidiärJa"
+                },
+                {
+                    "label": "AsylberechtigtSubsidiärNein",
+                    "value": "AsylberechtigtSubsidiärNein"
+                }
+            ]
+        },
+        "hideExpression": "model.DaueraufenthaltDrittstaat !== 'DaueraufenthaltDrittstaatNein'"
+    },
+    {
+        "key": "Student",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Student",
+            "options": [
+                {
+                    "label": "StudentJa",
+                    "value": "StudentJa"
+                },
+                {
+                    "label": "StudentNein",
+                    "value": "StudentNein"
+                }
+            ]
+        },
+        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärJa' && model.österreichStaatsbürger !== 'österreichStaatsbürgerJa' && model.AnmeldebescheinigungArbeitnehmerSelbständig !== 'AnmeldebescheinigungJa' && model.DaueraufenthaltDrittstaat !== 'DaueraufenthaltDrittstaatJa' && model.RechtDaueraufenthaltEU !== 'RechtDaueraufenthaltEUJa'"
+    },
+    {
+        "key": "PartnerInHaushalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "PartnerInHaushalt",
+            "options": [
+                {
+                    "label": "PartnerInHaushaltJa",
+                    "value": "PartnerInHaushaltJa"
+                },
+                {
+                    "label": "PartnerInHaushaltNein",
+                    "value": "PartnerInHaushaltNein"
+                }
+            ]
+        },
+        "hideExpression": "model.Student !== 'StudentNein'"
+    },
+    {
+        "key": "unter25",
+        "type": "radio",
+        "templateOptions": {
+            "label": "unter25",
+            "options": [
+                {
+                    "label": "unter25Ja",
+                    "value": "unter25Ja"
+                },
+                {
+                    "label": "unter25Nein",
+                    "value": "unter25Nein"
+                }
+            ]
+        },
+        "hideExpression": "model.PartnerInHaushalt !== 'PartnerInHaushaltNein'"
+    },
+    {
+        "key": "Haushalt",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Haushalt",
+            "options": [
+                {
+                    "label": "Kinder",
+                    "value": "Kinder"
+                }
+            ]
+        },
+        "hideExpression": "model.unter25 !== 'unter25Ja'"
+    },
+    {
+        "key": "Kinder",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Kinder",
+            "options": [
+                {
+                    "label": ">5Kinder",
+                    "value": ">5Kinder"
+                },
+                {
+                    "label": "0Kinder",
+                    "value": "0Kinder"
+                },
+                {
+                    "label": "1Kinder",
+                    "value": "1Kinder"
+                },
+                {
+                    "label": "2Kinder",
+                    "value": "2Kinder"
+                },
+                {
+                    "label": "3Kinder",
+                    "value": "3Kinder"
+                },
+                {
+                    "label": "4Kinder",
+                    "value": "4Kinder"
+                }
+            ]
+        },
+        "hideExpression": "model.unter25Ja !== 'Haushalt' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.unter25 !== 'unter25Nein'"
+    },
+    {
+        "key": "Einkommensgrenze",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Einkommensgrenze",
+            "options": [
+                {
+                    "label": "EinkommensgrenzeNichtÜberschritten",
+                    "value": "EinkommensgrenzeNichtÜberschritten"
+                },
+                {
+                    "label": "EinkommensgrenzeÜberschritten",
+                    "value": "EinkommensgrenzeÜberschritten"
+                }
+            ]
+        },
+        "hideExpression": "model.Kinder !== '>5Kinder' && model.Kinder !== '0Kinder' && model.Kinder !== '1Kinder' && model.Kinder !== '2Kinder' && model.Kinder !== '3Kinder' && model.Kinder !== '4Kinder'"
+    },
+    {
+        "key": "Vermögensgrenze",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Vermögensgrenze",
+            "options": [
+                {
+                    "label": "VermögensgrenzeNichtÜberschritten",
+                    "value": "VermögensgrenzeNichtÜberschritten"
+                },
+                {
+                    "label": "VermögensgrenzeÜberschritten",
+                    "value": "VermögensgrenzeÜberschritten"
+                }
+            ]
+        },
+        "hideExpression": "model.Einkommensgrenze !== 'EinkommensgrenzeNichtÜberschritten'"
+    },
+    {
+        "key": "Mitwirkung",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Mitwirkung",
+            "options": [
+                {
+                    "label": "MitwirkungJa",
+                    "value": "MitwirkungJa"
+                },
+                {
+                    "label": "MitwirkungNein",
+                    "value": "MitwirkungNein"
+                }
+            ]
+        },
+        "hideExpression": "model.Vermögensgrenze !== 'VermögensgrenzeNichtÜberschritten'"
+    },
+    {
+        "key": "VermittlungAMS",
+        "type": "radio",
+        "templateOptions": {
+            "label": "VermittlungAMS",
+            "options": [
+                {
+                    "label": "VermittlungAMSJa",
+                    "value": "VermittlungAMSJa"
+                },
+                {
+                    "label": "VermuttlingAMSNein",
+                    "value": "VermuttlingAMSNein"
+                }
+            ]
+        },
+        "hideExpression": "model.Mitwirkung !== 'MitwirkungJa'"
+    },
+    {
+        "outcome": null,
+        "key": "AnspruchWahrscheinlich",
+        "type": "radio",
+        "templateOptions": {
+            "label": "AnspruchWahrscheinlich"
+        },
+        "hideExpression": "model.VermittlungAMS !== 'VermittlungAMSJa'"
+    },
+    {
+        "outcome": null,
+        "key": "nichtWahrscheinlich",
+        "type": "radio",
+        "templateOptions": {
+            "label": "nichtWahrscheinlich"
+        },
+        "hideExpression": "model.Vermögensgrenze !== 'VermögensgrenzeÜberschritten' && model.Student !== 'StudentJa'"
+    },
+    {
+        "outcome": null,
+        "key": "ende",
+        "type": "radio",
+        "templateOptions": {
+            "label": "ende"
+        },
+        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärNein' && model.Einkommensgrenze !== 'EinkommensgrenzeÜberschritten' && model.Volljährig !== 'volljährigNein' && model.AsylwerberIn !== 'AsylwerberInJa' && model.Mitwirkung !== 'MitwirkungNein' && model.VermittlungAMS !== 'VermuttlingAMSNein' && model.LebensmittelpunktWien !== 'lebensmittelpunktWienNein'"
+    }
+]

@@ -1,0 +1,11 @@
+dag {
+bb="0,0,1,1"
+"WieGeht?" [pos="0.232,0.107"]
+gut [adjusted,pos="0.335,0.247"]
+hurra [outcome,pos="0.278,0.448"]
+sehrgut [adjusted,pos="0.143,0.246"]
+"WieGeht?" -> gut
+"WieGeht?" -> sehrgut
+gut -> hurra
+sehrgut -> hurra
+}

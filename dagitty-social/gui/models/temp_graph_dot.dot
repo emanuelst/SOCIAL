@@ -1,0 +1,180 @@
+digraph dag {
+bb="-0.5,-0.5,0.5,0.5"
+Beh0 [answer,answerlabel="0 Personen",answervalue="0",answersort="0",pos="0.308,-0.472"]
+Beh1 [answer,answerlabel="1 Person",answervalue="1",answersort="1",pos="0.327,-0.420"]
+Beh2 [answer,answerlabel="2 Personen",answervalue="2",answersort="2",pos="0.338,-0.371"]
+Beh3 [answer,answerlabel="3 Personen",answervalue="3",answersort="3",pos="0.332,-0.308"]
+Beh4 [answer,answerlabel="4 Personen",answervalue="4",answersort="4",pos="0.325,-0.231"]
+Beh5 [answer,answerlabel="5 Personen",answervalue="5",answersort="5",pos="0.315,-0.150"]
+EinkommenKind1 [input,pos="0.164,-0.434"]
+EinkommenKind2 [input,pos="0.157,-0.368"]
+EinkommenKind3 [input,pos="0.148,-0.297"]
+EinkommenKind4 [input,pos="0.150,-0.231"]
+EinkommenKind5 [input,pos="0.141,-0.175"]
+EinkommenPers1 [input,inputsort="1",pos="-0.208,-0.468"]
+EinkommenPers2 [input,inputsort="2",pos="-0.204,-0.404"]
+EinkommenPers3 [input,inputsort="3",pos="-0.203,-0.337"]
+EinkommenPers4 [input,inputsort="4",pos="-0.203,-0.271"]
+EinkommenPers5 [input,inputsort="5",pos="-0.204,-0.206"]
+Erwachsene [question,questionlabel="Erwachsene im Haushalt",pos="-0.464,-0.331"]
+Erwachsene1 [answer,answerlabel="1 Erwachsener",answervalue="1",pos="-0.381,-0.457"]
+Erwachsene2 [answer,answerlabel="2 Erwachsene",answervalue="2",pos="-0.377,-0.391"]
+Erwachsene3 [answer,answerlabel="3 Erwachsene",answervalue="3",pos="-0.379,-0.335"]
+Erwachsene4 [answer,answerlabel="4 Erwachsene",answervalue="4",pos="-0.377,-0.282"]
+Erwachsene5 [answer,answerlabel="5 Erwachsene",answervalue="5",pos="-0.380,-0.209"]
+GeldAllein [result,resultcalculation="(richtsatz-EinkommenPers1)*.6",pos="-0.241,0.326"]
+GeldPers1 [result,resultcalculation="(richtsatzhaushalt-EinkommenPers1)*.6",pos="-0.243,0.255"]
+GeldPers2 [result,resultcalculation="(richtsatzhaushalt-EinkommenPers2)*.6",pos="-0.242,0.183"]
+GeldPers3 [result,resultcalculation="(richtsatzdritte-EinkommenPers3)*.6",pos="-0.237,0.111"]
+GeldPers4 [result,resultcalculation="(richtsatzdritte-EinkommenPers4)*.6",pos="-0.228,0.036"]
+GeldPers5 [result,resultcalculation="(richtsatzdritte-EinkommenPers5)*.6",pos="-0.222,-0.032"]
+Geldleistung [result,resultcalculation="GeldPers1*1",pos="-0.026,0.316"]
+Gesamtleistung [result,resultcalculation="Geldleistung+Sachleistung",pos="-0.023,0.138"]
+Heizung [input,pos="0.444,-0.154"]
+Kind0 [answer,answerlabel="0 Kinder",answervalue="0",pos="-0.020,-0.480"]
+Kind1 [answer,answerlabel="1 Kind",answervalue="1",pos="0.003,-0.432"]
+Kind2 [answer,answerlabel="2 Kinder",answervalue="2",pos="0.007,-0.379"]
+Kind3 [answer,answerlabel="3 Kinder",answervalue="3",pos="0.000,-0.331"]
+Kind4 [answer,answerlabel="4 Kinder",answervalue="4",pos="-0.007,-0.280"]
+Kind5 [answer,answerlabel="5 Kinder",answervalue="5",pos="-0.025,-0.206"]
+Miete [input,pos="0.442,-0.257"]
+Minderjaehrige [question,questionlabel="TestTest",pos="-0.091,-0.337"]
+PersBeh [question,pos="0.267,-0.349"]
+SachAllein [result,resultcalculation="(richtsatz-EinkommenPers1)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.129,-0.027"]
+SachPers1 [result,resultcalculation="(richtsatzhaushalt-EinkommenPers1)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.125,0.041"]
+SachPers2 [result,resultcalculation="(richtsatzhaushalt-EinkommenPers2)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.125,0.123"]
+SachPers3 [result,resultcalculation="(richtsatzdritte-EinkommenPers3)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.128,0.203"]
+SachPers4 [result,resultcalculation="(richtsatzdritte-EinkommenPers4)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.127,0.287"]
+SachPers5 [result,resultcalculation="(richtsatzdritte-EinkommenPers5)*.4-(Wohnzuschuss/Erwachsene)",pos="-0.129,0.393"]
+Sachleistung [result,resultcalculation="SachPers1*1",pos="-0.022,0.221"]
+Strom [input,pos="0.444,-0.046"]
+Wohnaufwand [result,resultcalculation="Miete+Heizung+Strom",pos="-0.031,0.399"]
+Wohnzuschuss [input,pos="0.441,-0.352"]
+alleinlebensunterhalt [result,resultcalculation="richtsatz*.6",pos="0.324,-0.041"]
+alleinwohnbedarf [result,resultcalculation="richtsatz*.4",pos="0.328,0.071"]
+decision1 [decision,decisioncalculation="!model.Erwachsene || model.Erwachsene < 1",pos="-0.288,-0.466"]
+decision2 [decision,decisioncalculation="!model.Erwachsene || model.Erwachsene < 2",pos="-0.283,-0.403"]
+decision3 [decision,decisioncalculation="!model.Erwachsene || model.Erwachsene < 3",pos="-0.288,-0.338"]
+decision4 [decision,decisioncalculation="!model.Erwachsene || model.Erwachsene < 4",pos="-0.295,-0.278"]
+decision5 [decision,decisioncalculation="!model.Erwachsene || model.Erwachsene < 5",pos="-0.304,-0.207"]
+drittelebensunterhalt [result,resultcalculation="richtsatzdritte*.6",pos="0.039,-0.056"]
+drittewohnbedarf [result,resultcalculation="richtsatzdritte*.4",pos="0.047,0.063"]
+haushaltlebensunterhalt [result,resultcalculation="richtsatzhaushalt*.6",pos="0.197,-0.059"]
+haushaltwohnbedarf [result,resultcalculation="richtsatzhaushalt*.4",pos="0.196,0.081"]
+kinddecision1 [decision,decisioncalculation="!model.Minderjaehrige || model.Minderjaehrige < 1",pos="0.072,-0.442"]
+kinddecision2 [decision,decisioncalculation="!model.Minderjaehrige || model.Minderjaehrige < 2",pos="0.078,-0.379"]
+kinddecision3 [decision,decisioncalculation="!model.Minderjaehrige || model.Minderjaehrige < 3",pos="0.069,-0.322"]
+kinddecision4 [decision,decisioncalculation="!model.Minderjaehrige || model.Minderjaehrige < 4",pos="0.056,-0.266"]
+kinddecision5 [decision,decisioncalculation="!model.Minderjaehrige || model.Minderjaehrige < 5",pos="0.042,-0.199"]
+kinder1 [result,resultcalculation="richtsatz*.25",pos="-0.452,-0.051"]
+kinder2 [result,resultcalculation="richtsatz*.20",pos="-0.453,0.057"]
+kinder3 [result,resultcalculation="richtsatz*.15",pos="-0.453,0.176"]
+kinder4 [result,resultcalculation="richtsatz*.125",pos="-0.452,0.295"]
+kinder5 [result,resultcalculation="richtsatz*.12",pos="-0.456,0.407"]
+richtsatz [input,inputdefaultvalue="917.35",pos="0.453,0.203"]
+richtsatzdritte [result,resultcalculation="richtsatz*.45",pos="0.235,0.196"]
+richtsatzhaushalt [result,resultcalculation="richtsatz*.7",pos="0.358,0.206"]
+zuschlagPersBeh [result,resultcalculation="PersBeh*zuschlagbeh",pos="-0.239,0.388"]
+zuschlagalleink1 [result,resultcalculation="richtsatz*.12",pos="-0.347,0.027"]
+zuschlagalleink2 [result,resultcalculation="richtsatz*.09",pos="-0.351,0.139"]
+zuschlagalleink3 [result,resultcalculation="richtsatz*.06",pos="-0.351,0.235"]
+zuschlagalleink4 [result,resultcalculation="richtsatz*.03",pos="-0.351,0.333"]
+zuschlagbeh [result,resultcalculation="richtsatz*.18",pos="0.144,0.190"]
+Beh0 -> Wohnzuschuss
+Beh1 -> Wohnzuschuss
+Beh2 -> Wohnzuschuss
+Beh3 -> Wohnzuschuss
+Beh4 -> Wohnzuschuss
+Beh5 -> Wohnzuschuss
+EinkommenKind1 -> EinkommenKind2
+EinkommenKind1 -> PersBeh
+EinkommenKind2 -> EinkommenKind3
+EinkommenKind2 -> PersBeh
+EinkommenKind3 -> EinkommenKind4
+EinkommenKind3 -> PersBeh
+EinkommenKind4 -> EinkommenKind5
+EinkommenKind4 -> PersBeh
+EinkommenKind5 -> PersBeh
+EinkommenPers1 -> EinkommenPers2
+EinkommenPers1 -> Minderjaehrige
+EinkommenPers2 -> EinkommenPers3
+EinkommenPers2 -> Minderjaehrige
+EinkommenPers3 -> EinkommenPers4
+EinkommenPers3 -> Minderjaehrige
+EinkommenPers4 -> EinkommenPers5
+EinkommenPers4 -> Minderjaehrige
+EinkommenPers5 -> Minderjaehrige
+Erwachsene -> Erwachsene1
+Erwachsene -> Erwachsene2
+Erwachsene -> Erwachsene3
+Erwachsene -> Erwachsene4
+Erwachsene -> Erwachsene5
+Erwachsene1 -> decision1
+Erwachsene2 -> decision2
+Erwachsene3 -> decision3
+Erwachsene4 -> decision4
+Erwachsene5 -> decision5
+GeldAllein -> GeldPers1
+GeldPers1 -> GeldPers2
+GeldPers2 -> GeldPers3
+GeldPers3 -> GeldPers4
+GeldPers4 -> GeldPers5
+GeldPers5 -> SachAllein
+Geldleistung -> Sachleistung
+Heizung -> Strom
+Kind0 -> PersBeh [pos="0.224,-0.497"]
+Kind1 -> kinddecision1
+Kind2 -> kinddecision2
+Kind3 -> kinddecision3
+Kind4 -> kinddecision4
+Kind5 -> kinddecision5
+Miete -> Heizung
+Minderjaehrige -> Kind0
+Minderjaehrige -> Kind1
+Minderjaehrige -> Kind2
+Minderjaehrige -> Kind3
+Minderjaehrige -> Kind4
+Minderjaehrige -> Kind5
+PersBeh -> Beh0
+PersBeh -> Beh1
+PersBeh -> Beh2
+PersBeh -> Beh3
+PersBeh -> Beh4
+PersBeh -> Beh5
+SachAllein -> SachPers1
+SachPers1 -> SachPers2
+SachPers2 -> SachPers3
+SachPers3 -> SachPers4
+SachPers4 -> SachPers5
+SachPers5 -> Wohnaufwand
+Sachleistung -> Gesamtleistung
+Strom -> alleinlebensunterhalt
+Wohnaufwand -> Geldleistung
+Wohnzuschuss -> Miete
+alleinlebensunterhalt -> alleinwohnbedarf
+alleinwohnbedarf -> haushaltlebensunterhalt
+decision1 -> EinkommenPers1
+decision2 -> EinkommenPers2
+decision3 -> EinkommenPers3
+decision4 -> EinkommenPers4
+decision5 -> EinkommenPers5
+drittelebensunterhalt -> drittewohnbedarf
+drittewohnbedarf -> kinder1 [pos="-0.149,-0.202"]
+haushaltlebensunterhalt -> haushaltwohnbedarf
+haushaltwohnbedarf -> drittelebensunterhalt
+kinddecision1 -> EinkommenKind1
+kinddecision2 -> EinkommenKind2
+kinddecision3 -> EinkommenKind3
+kinddecision4 -> EinkommenKind4
+kinddecision5 -> EinkommenKind5
+kinder1 -> kinder2
+kinder2 -> kinder3
+kinder3 -> kinder4
+kinder4 -> kinder5
+kinder5 -> zuschlagalleink1
+zuschlagPersBeh -> GeldAllein
+zuschlagalleink1 -> zuschlagalleink2
+zuschlagalleink2 -> zuschlagalleink3
+zuschlagalleink3 -> zuschlagalleink4
+zuschlagalleink4 -> zuschlagPersBeh
+}

@@ -1,0 +1,100 @@
+<!--https://www.mynotepaper.com/generate-json-using-sortablejs-drag-and-drop-->
+<!-- https://github.com/SortableJS/Sortable/issues/997 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hello, world!</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Latest Sortable -->
+  <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      padding: 20px;
+    }
+    .list-group-item {
+      cursor: move;
+      cursor: -webkit-grabbing;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <h4 class="text-center">Products</h4>
+
+      <!-- product list -->
+      <div id="productList" class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><span class="font-weight-bold">1</span>. <span id="title[]">Form 1</span></span>
+          <span class="badge badge-primary badge-pill">21</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><span class="font-weight-bold">2</span>. <span id="title[]">Form 2</span></span>
+          <span class="badge badge-primary badge-pill">35</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><span class="font-weight-bold">3</span>. <span id="title[]">Form 3</span></span>
+          <span class="badge badge-primary badge-pill">45</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><span class="font-weight-bold">4</span>. <span id="title[]">Form 4</span></span>
+          <span class="badge badge-primary badge-pill">17</span>
+        </li>
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="button" id="generateJSON" class="btn btn-info">Generate JSON</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h4 class="text-center">JSON</h4>
+      <pre id="printCode"></pre>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // generate product JSON
+  $('#generateJSON').click(function() {
+    generateJSON();
+  });
+
+  function generateJSON(){
+    let data = {};
+
+    var titles = $('span[id^=title]').map(function(idx, elem) {
+      return $(elem).text();
+    }).get();
+
+    data['products'] = titles;
+
+    // encode to JSON format
+    var products_json = JSON.stringify(data,null,'\t');
+    $('#printCode').html(products_json);
+  }
+</script>
+
+<script>
+  // sortable
+  Sortable.create(productList, {
+    group: "sorting",
+    sort: true,
+    onEnd: function(evt){
+      generateJSON();
+    }
+  });
+</script>
+
+</body>
+</html>
