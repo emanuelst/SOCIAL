@@ -6,7 +6,7 @@ SOCIAL enables the modeling and editing of social welfare calculators and questi
 
 ## Testing
 
-1. Download the Source Code from GitHub
+1. Download SOCIAL from GitHub
 2. Run `npm install`
 3. Run `ng serve` for a dev server. To test the editor, set up a `PHP` server to serve the files from `dagitty-social/gui`. 
 
