@@ -1,27 +1,34 @@
 # SOCIAL
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+SOCIAL is a Social Welfare Calculator Adaptable to Varying Legal Frameworks. 
 
-## Development server
+SOCIAL enables the modeling and editing of social welfare calculators and questionnaires and can generate web applications based on these models. The model editor uses a Directed acyclic graph (DAG) to model calculators and questionnaires and is based on [DAGitty](https://github.com/jtextor/dagitty) by Textor et al., which was modified to enable domain-specfific modeling. SOCIAL can then convert the model to a web application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Testing
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Download the Source Code from GitHub
+2. Run `npm install`
+3. Run `ng serve` for a dev server. To test the editor, set up a `PHP` server to serve the files from `dagitty-social/gui`. 
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Assuming a Ubuntu 20.04.1 LTS server. 
+To install the LAMP Stack, you can follow the instructions by [Linode](https://www.linode.com/docs/web-servers/lamp/how-to-install-a-lamp-stack-on-ubuntu-18-04/).
 
-## Running end-to-end tests
+1. Upload the build artifacts (the application) to the server.
+2. Upload the directory `dagitty-social/gui` (the editor) to the server.
+3. Place the `Python` Script in `/usr/local/bin/dot_to_formly_json-python` 
+4. Ensure the `editor/models` and `assets/json-powered` directories can be written to using the `Python` script (permissions `rwxrwxrwx`) 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Online
 
-## Further help
+A version has also been deployed at [https://social.cosy.univie.ac.at](https://social.cosy.univie.ac.at)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Notes
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+
