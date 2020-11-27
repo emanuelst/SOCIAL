@@ -22,7 +22,7 @@ To install the LAMP Stack, you can follow the instructions by [Linode](https://w
 1. Upload the build artifacts (the application) to the server.
 2. Upload the directory `dagitty-social/gui` (the editor) to the server.
 3. Place the `Python` Script in `/usr/local/bin/dot_to_formly_json-python` 
-4. Ensure the `editor/models` and `assets/json-powered` directories can be written to using the `Python` script (permissions `rwxrwxrwx`) 
+4. Ensure the `editor/models` and `assets/json-powered` directories can be written to using the `Python` script (correct permissions) 
 
 ## Online
 
