@@ -87,7 +87,7 @@
             "answerlabel": "\"1 Elternteil\"",
             "answersort": "\"3\"",
             "pos": "\"-2.473,3.559\"",
-            "id": "1Elternteil"
+            "id": "Elternteil"
         },
         {
             "answer": null,
@@ -431,7 +431,7 @@
             "key": 0
         },
         {
-            "source": "1Elternteil",
+            "source": "Elternteil",
             "target": "kinder",
             "key": 0
         },
@@ -497,7 +497,7 @@
         },
         {
             "source": "Haushalt",
-            "target": "1Elternteil",
+            "target": "Elternteil",
             "key": 0
         },
         {

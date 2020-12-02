@@ -320,7 +320,7 @@
                 },
                 {
                     "label": "1 Elternteil",
-                    "value": "1Elternteil",
+                    "value": "Elternteil",
                     "sort": "\"3\""
                 },
                 {
@@ -357,7 +357,7 @@
             "addons",
             "custompanel"
         ],
-        "hideExpression": "model.Haushalt !== '1Elternteil' && model.Haushalt !== 'Allein' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.Haushalt !== 'WG' && model.Haushalt !== 'beideEltern' && model.unter25 !== 'unter25Nein' || model.kinderGr0"
+        "hideExpression": "model.Haushalt !== 'Elternteil' && model.Haushalt !== 'Allein' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.Haushalt !== 'WG' && model.Haushalt !== 'beideEltern' && model.unter25 !== 'unter25Nein' || model.kinderGr0"
     },
     {
         "decision": null,

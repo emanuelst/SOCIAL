@@ -205,7 +205,7 @@
             "options": [
                 {
                     "label": "1 Elternteil",
-                    "value": "1Elternteil"
+                    "value": "Elternteil"
                 },
                 {
                     "label": "beide Eltern",
@@ -255,7 +255,7 @@
                 }
             ]
         },
-        "hideExpression": "model.Haushalt !== '1Elternteil' && model.Haushalt !== 'beideEltern' && model.Haushalt !== 'Allein' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.Haushalt !== 'WG' && model.unter25 !== 'unter25Nein' || model.Kinder"
+        "hideExpression": "model.Haushalt !== 'Elternteil' && model.Haushalt !== 'beideEltern' && model.Haushalt !== 'Allein' && model.PartnerInHaushalt !== 'PartnerInHaushaltJa' && model.Haushalt !== 'WG' && model.unter25 !== 'unter25Nein' || model.Kinder"
     },
     {
         "key": "Einkommensgrenze",

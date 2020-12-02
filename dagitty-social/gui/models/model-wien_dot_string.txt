@@ -13,7 +13,7 @@ bb="-5.55,-5.682,4.172,7.617"
 "österreichStaatsbürger" [question,pos="-4.998,-2.675"]
 "österreichStaatsbürgerJa" [answer,answerlabel="Ja",pos="-4.592,-1.913"]
 "österreichStaatsbürgerNein" [answer,answerlabel="Nein",pos="-3.499,-2.481"]
-1Elternteil [answer,answerlabel="1 Elternteil",answersort="3",pos="-2.473,3.559"]
+Elternteil [answer,answerlabel="1 Elternteil",answersort="3",pos="-2.473,3.559"]
 Allein [answer,answerlabel="Allein",answersort="4",pos="-3.294,3.485"]
 AnmeldebescheinigungJa [answer,answerlabel="Ja",pos="-0.544,-2.553"]
 AnmeldebescheinigungNein [answer,answerlabel="Nein",pos="0.973,-2.791"]
@@ -75,7 +75,7 @@ vermoegen [input,pos="1.512,6.418"]
 "österreichStaatsbürger" -> "österreichStaatsbürgerNein"
 "österreichStaatsbürgerJa" -> Student
 "österreichStaatsbürgerNein" -> RechtDaueraufenthaltEU
-1Elternteil -> kinder
+Elternteil -> kinder
 Allein -> kinder
 AnmeldebescheinigungJa -> Student
 AnmeldebescheinigungNein -> DaueraufenthaltDrittstaat
@@ -88,7 +88,7 @@ DaueraufenthaltDrittstaat -> DaueraufenthaltDrittstaatNein
 DaueraufenthaltDrittstaatJa -> Student
 DaueraufenthaltDrittstaatNein -> "AsylberechtigtSubsidiär"
 DaueraufenthaltDrittstaatNein -> DaueraufenthaltDrittstaatJa
-Haushalt -> 1Elternteil
+Haushalt -> Elternteil
 Haushalt -> Allein
 Haushalt -> WG
 Haushalt -> beideEltern
