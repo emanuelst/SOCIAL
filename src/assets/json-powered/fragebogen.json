@@ -562,7 +562,7 @@
                 },
                 {
                     "label": "Nein",
-                    "value": "VermuttlingAMSNein",
+                    "value": "VermittlungAMSNein",
                     "sort": ""
                 }
             ]
@@ -705,6 +705,6 @@
             "addons",
             "custompanel"
         ],
-        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärNein' && model.EinkommensgrenzeÜberschritten !== 'ende' && model.Volljährig !== 'volljährigNein' && model.AsylwerberIn !== 'AsylwerberInJa' && model.Mitwirkung !== 'MitwirkungNein' && model.VermittlungAMS !== 'VermuttlingAMSNein' && model.LebensmittelpunktWien !== 'lebensmittelpunktWienNein' || model.ende"
+        "hideExpression": "model.AsylberechtigtSubsidiär !== 'AsylberechtigtSubsidiärNein' && model.EinkommensgrenzeÜberschritten !== 'ende' && model.Volljährig !== 'volljährigNein' && model.AsylwerberIn !== 'AsylwerberInJa' && model.Mitwirkung !== 'MitwirkungNein' && model.VermittlungAMS !== 'VermittlungAMSNein' && model.LebensmittelpunktWien !== 'lebensmittelpunktWienNein' || model.ende"
     }
 ]

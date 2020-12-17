@@ -247,7 +247,7 @@
             "answer": null,
             "answerlabel": "\"Nein\"",
             "pos": "\"2.049,2.754\"",
-            "id": "VermuttlingAMSNein"
+            "id": "VermittlungAMSNein"
         },
         {
             "answer": null,
@@ -612,7 +612,7 @@
         },
         {
             "source": "VermittlungAMS",
-            "target": "VermuttlingAMSNein",
+            "target": "VermittlungAMSNein",
             "key": 0
         },
         {
@@ -626,7 +626,7 @@
             "key": 0
         },
         {
-            "source": "VermuttlingAMSNein",
+            "source": "VermittlungAMSNein",
             "target": "ende",
             "key": 0
         },

@@ -548,7 +548,7 @@
                 },
                 {
                     "label": "Nein",
-                    "value": "VermuttlingAMSNein",
+                    "value": "VermittlungAMSNein",
                     "sort": ""
                 }
             ]

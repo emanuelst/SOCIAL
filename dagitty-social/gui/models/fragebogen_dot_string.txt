@@ -41,7 +41,7 @@ StudentJa [answer,answerlabel="Ja",pos="-2.541,-0.303"]
 StudentNein [answer,answerlabel="Nein",pos="-4.610,-0.953"]
 VermittlungAMS [question,pos="2.419,3.580"]
 VermittlungAMSJa [answer,answerlabel="Ja",pos="3.497,2.950"]
-VermuttlingAMSNein [answer,answerlabel="Nein",pos="2.049,2.754"]
+VermittlungAMSNein [answer,answerlabel="Nein",pos="2.049,2.754"]
 WG [answer,answerlabel="WG",answersort="2",pos="-1.602,3.129"]
 beideEltern [answer,answerlabel="beide Eltern",answersort="1",pos="-0.953,3.677"]
 einkommen [input,pos="-2.885,5.687"]
@@ -111,10 +111,10 @@ Student -> StudentNein
 StudentJa -> nichtWahrscheinlich
 StudentNein -> PartnerInHaushalt
 VermittlungAMS -> VermittlungAMSJa
-VermittlungAMS -> VermuttlingAMSNein
+VermittlungAMS -> VermittlungAMSNein
 VermittlungAMSJa -> kinderGr5
 VermittlungAMSJa -> kinderKl5
-VermuttlingAMSNein -> ende
+VermittlungAMSNein -> ende
 WG -> kinder
 beideEltern -> kinder
 einkommen -> "EinkommensgrenzeNichtÜberschritten"
