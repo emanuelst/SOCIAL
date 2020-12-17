@@ -47,7 +47,7 @@ beideEltern [answer,answerlabel="beide Eltern",answersort="1",pos="-0.953,3.677"
 einkommen [input,pos="-2.885,5.687"]
 ende [result,resultcalculation="kinder*1000",addlinfo="This is the end.",pos="3.228,-2.182"]
 kinder [input,pos="-4.804,5.923"]
-kinderGr0 [decision,decisioncalculation="kinder>-1",pos="-3.764,6.340"]
+kinderGr0 [decision,decisioncalculation="kinder>=0",pos="-3.764,6.340"]
 kinderGr5 [decision,decisioncalculation="kinder>5",pos="3.592,1.112"]
 kinderKl5 [decision,decisioncalculation="kinder<5",pos="2.718,1.750"]
 lebensmittelpunktWienJa [answer,answerlabel="Ja",pos="-3.472,-4.216"]
