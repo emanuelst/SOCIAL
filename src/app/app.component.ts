@@ -1,9 +1,10 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 import {TranslateService} from '@ngx-translate/core';
 import {UserService} from './user.service';
 import {KeyValue} from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 
 import {faInfoCircle, faEuroSign} from '@fortawesome/free-solid-svg-icons';
 
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit {
 
     // https://formly.dev/examples/advanced/i18n-alternative
 
-    constructor(private userService: UserService, public translate: TranslateService, private fb: FormBuilder) {
+    constructor(@Inject(DOCUMENT) private document: Document, private userService: UserService, public translate: TranslateService, private fb: FormBuilder) {
         // https://github.com/ngx-formly/ngx-formly/issues/390#issuecomment-306908053
         // https://stackoverflow.com/questions/34615425/how-to-watch-for-form-changes-in-angular/34616143#34616143
         this.form.valueChanges.subscribe(data => {
@@ -96,6 +97,10 @@ export class AppComponent implements OnInit {
         this.languageForm = this.fb.group({
             languageControl: ['en']
         });
+
+        // set lang attribute
+        // https://stackoverflow.com/questions/53990773/angular-universal-html-lang-tag
+        this.document.documentElement.lang = this.translate.currentLang;
     }
 
     // https://github.com/ngx-formly/ngx-formly/issues/1225#issuecomment-628118046
@@ -402,6 +407,15 @@ export class AppComponent implements OnInit {
 
     changeLanguage(selectObject) {
         this.translate.use(selectObject);
+
+        // set lang attribute
+        // https://stackoverflow.com/questions/53990773/angular-universal-html-lang-tag
+        // does not work on first change
+        console.log(selectObject)
+        //console.log(this.translate.currentLang);
+
+        this.document.documentElement.lang = selectObject;
+
     }
 
     refresh(): void {

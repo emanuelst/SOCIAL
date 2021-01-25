@@ -8,9 +8,10 @@
 <br />
 <br />
 
-<form [formGroup]="languageForm" (change)="changeLanguage($event.target.value)">
- <select id="languageControl" class="form-control" formControlName="languageControl">
-  <option [value]="language.code" *ngFor="let language of languages">{{language.name}}</option>
+<!-- https://stackoverflow.com/questions/35513049/angular2-ngfor-in-select-list-set-active-based-on-string-from-object -->
+<form [formGroup]="languageForm">
+ <select id="languageControl" class="form-control" formControlName="languageControl"  (change)="changeLanguage($event.target.value)">
+  <option [value]="language.code" *ngFor="let language of languages" [attr.selected]="language.code==translate.currentLang ? true : null">{{language.name}}</option>
  </select>
 </form>
 
