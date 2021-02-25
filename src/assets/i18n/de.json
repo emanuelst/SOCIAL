@@ -92,8 +92,8 @@
     "SachPers4":	"Sachleistung (- Wohnzuschuss) 4. Erwachsene*r ",
     "SachPers5":	"Sachleistung (- Wohnzuschuss) 5. Erwachsene*r ",
     "Wohnaufwand":	"Wohnaufwand (Miete+Heizung+Strom)",
-    "Geldleistung":	"Summe Geldleistungen",
-    "Sachleistung":	"Summe Sacheistungen",
+    "Geldleistung":	"Geldleistungen",
+    "Sachleistung":	"Sachleistungen",
     "Gesamtleistung":	"SH gesamt  (Geld- und Sachleistung)",
     "imprinttext": "Impressum: Masterarbeit @ Universität Wien - Cooperative Systems, Sensengasse 6, 1090 Wien, Österreich in Kooperation mit der",
     "benefitsNegative": "Negativer Wert, da das Einkommen bei anderen Personen angerechnet wird."
